@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 1f7891f904795c94aa9fb616ada7b2ee
+  m_Entries:
+  - m_Id: 72056283136
+    m_Key: "Play (Caps Lock)\t\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1427579838464
+    m_Key: Skins (Caps Lock)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1516390031360
+    m_Key: Upgrades (Caps Lock)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5879502184448
+    m_Key: Btn_Turret
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6517350965248
+    m_Key: Mine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14171817353216
+    m_Key: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71344303874048
+    m_Key: Upgrade Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72841573933056
+    m_Key: Btn_Cost
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 9057057902274543846
+  references:
+    version: 2
+    RefIds:
+    - rid: 9057057902274543846
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1762606127840

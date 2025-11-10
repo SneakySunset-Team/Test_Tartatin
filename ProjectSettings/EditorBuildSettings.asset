@@ -12,5 +12,7 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/MainScene.unity
     guid: be9bb3121f184344281569efb92004a8
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: b3a5b8c81b343214fb386bced371f752, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 8ce5789db169635459ee99246defb0b0, type: 2}
   m_UseUCBPForAssetBundles: 0
