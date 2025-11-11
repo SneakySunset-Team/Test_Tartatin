@@ -22,6 +22,20 @@ MonoBehaviour:
     - Locale-fr
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 989184cffb8351142a05f9a2c74d4763
+    m_Address: Upgrades_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0264acd4fc0ae54fa09b705b52519de
+    m_Address: Skins_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 408af08948596e842a7a0fa8564a8f01, type: 2}
   m_SchemaSet:

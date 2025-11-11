@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeData: {fileID: 11400000, guid: 46b1aa1d0234cbf4c92f5471e24f08c0, type: 2}
-  _range: 7
+  _range: 4
   _gizmoCircleResolution: 20
   _bulletPrefab: {fileID: 13042450146139043, guid: 8cf276251a7951d47b61453bf3c3e437, type: 3}
   _firePoint: {fileID: 3260843794752404972}

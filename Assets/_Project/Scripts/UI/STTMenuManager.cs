@@ -13,10 +13,13 @@ using UnityEngine.Serialization;
 public enum EMenuState { Start, Loading, Play, Pause, GameOver,None}
 
 [Serializable]
-public class TTMenuManager :  TTSingleton<TTMenuManager>
+public class STTMenuManager :  TTSingleton<STTMenuManager>
 {
     [HideInInspector]
     public Action<EMenuState, EMenuState> OnMenuStateChangedEvent;
+
+    [HideInInspector]
+    public Action<float> OnLoadingProgressEvent;
     
     [field : SerializeField, ReadOnly, HideInEditorMode] public EMenuState currentState { get; private set; } = EMenuState.None;
     [field : SerializeField, ReadOnly, HideInEditorMode] public EMenuState previousState { get; private set; } = EMenuState.None;
@@ -124,7 +127,7 @@ public class TTMenuManager :  TTSingleton<TTMenuManager>
         {
             case EMenuState.Loading :
                 // TODO : Add update progress bar Callback
-                TTGameManager.Instance.LoadLevelSceneAsync(null, ()=>ChangeState(EMenuState.Play));
+                STTGameManager.Instance.LoadLevelSceneAsync(OnLoadingProgressEvent, ()=>ChangeState(EMenuState.Play));
                 break;
         }
     }

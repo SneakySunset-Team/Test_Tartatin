@@ -65,7 +65,11 @@ public class TTTurretBehaviour : MonoBehaviour
 
     private void Fire()
     {
-        var bullet = TTRunManager.Instance.pool.Get(EPoolItem.Bullet, _firePoint.position) as  TTBulletBehaviour;
+        if(_ennemiesInRange.Count == 0) return;
+        _ennemiesInRange.RemoveAll(e => e == null || !e.gameObject.activeInHierarchy);
+        if(_ennemiesInRange.Count == 0) return;
+        
+        var bullet = STTRunManager.Instance.pool.Get(EPoolItem.Bullet, _firePoint.position) as  TTBulletBehaviour;
         if (bullet.ennemy != null)
         {
             Debug.LogWarning("Pooled an already active bullet");

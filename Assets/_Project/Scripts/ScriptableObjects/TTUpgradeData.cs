@@ -1,4 +1,8 @@
 ﻿using Sirenix.OdinInspector;
+#if UNITY_EDITOR
+using Sirenix.OdinInspector.Modules.Localization.Editor;
+#endif
+using Sirenix.Serialization;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +20,7 @@ public class TTUpgradeData : SerializedScriptableObject
     public void LevelUpStat(EUpgradeType upgradeType)
     {
         upgradeData[upgradeType].currentLevel++;
+        STTGameManager.Instance.DeductDollars(upgradeData[upgradeType].levelData[upgradeData[upgradeType].currentLevel - 1].levelUpCost);
     }
 
     public int GetStatValue(EUpgradeType upgradeType)
@@ -28,15 +33,17 @@ public class TTUpgradeData : SerializedScriptableObject
     {
         var levelData= upgradeData[upgradeType].levelData;
         int currentLevel = upgradeData[upgradeType].currentLevel;
-        return levelData != null && levelData.Length > currentLevel;
+        return levelData != null && levelData.Length > currentLevel + 1;
     }
 
     public bool CanUpgrade(EUpgradeType upgradeType)
     {
         var levelData= upgradeData[upgradeType].levelData;
         int currentLevel = upgradeData[upgradeType].currentLevel;
-        return TTGameManager.Instance.currentDollars >= levelData[currentLevel].levelUpCost;
+        return STTGameManager.Instance.currentDollars >= levelData[currentLevel].levelUpCost;
     }
+
+    public void ResetUpgrade(EUpgradeType upgradeType) => upgradeData[upgradeType].currentLevel = 0;
     
     
     #if UNITY_EDITOR
@@ -70,5 +77,11 @@ public class SStatUpgradeData
     public SStatLevelData[] levelData;
     public int currentLevel;
     public Sprite icon;
-    public TableEntryReference _descriptionTableEntryReference;
+    [FormerlySerializedAs("ttLocalizationTableEntryReference")]
+    [InlineProperty, HideLabel]
+    public TTLocalizationTableEntryReference localizationTableEntryReference;
 }
+
+
+
+

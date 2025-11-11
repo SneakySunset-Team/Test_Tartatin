@@ -9,61 +9,74 @@ public class TTPlayMenuManager : MonoBehaviour
     TTButton _spawnMineButton, _spawnTurretButton;
 
     [SerializeField]
-    TextMeshProUGUI _minePriceTxt, _turretPriceTxt, _currentGoldTxt;
+    Button _pauseBtn;
+
+    [SerializeField]
+    TextMeshProUGUI _minePriceTxt, _turretPriceTxt, _currentGoldTxt, _dollarsGainTxt;
 
     [SerializeField]
     Image _draggedItemImg;
-    
+
+    void Awake()
+    {
+        _pauseBtn.onClick.AddListener(()=>STTMenuManager.Instance.ChangeState(EMenuState.Pause));
+    }
+
     void OnEnable()
     {
-        TTGameManager.Instance.OnRunStartedEvent += OnRunStarted;
-        TTGameManager.Instance.OnRunFinishedEvent += OnRunFinished;
+        STTGameManager.Instance.OnRunFinishedEvent += OnRunFinished;
+        STTGameManager.Instance.OnRunStartedEvent += OnRunStarted;
     }
 
     void OnDisable()
     {
-        TTGameManager.Instance.OnRunStartedEvent -= OnRunStarted;
-        TTGameManager.Instance.OnRunFinishedEvent -= OnRunFinished;
+        STTGameManager.Instance.OnRunFinishedEvent -= OnRunFinished;
+        STTGameManager.Instance.OnRunStartedEvent -= OnRunStarted;
     }
 
     void OnRunStarted()
     {
-        TTRunManager runManager = TTRunManager.Instance;
-        _spawnMineButton.OnPressEvent.AddListener(()=>TTRunManager.Instance.buildingManager.SpawnGridElement(EPoolItem.Mine));
-        _spawnTurretButton.OnPressEvent.AddListener(()=>TTRunManager.Instance.buildingManager.SpawnGridElement(EPoolItem.Turret));
-        runManager.economyManager.OnGoldChangeEvent += OnGoldOrPriceChange;
-        runManager.economyManager.OnPriceChangeEvent += OnGoldOrPriceChange;
+        STTRunManager runManager = STTRunManager.Instance;
+        _spawnMineButton.OnPressEvent.AddListener(()=>STTRunManager.Instance.buildingManager.SpawnGridElement(EPoolItem.Mine));
+        _spawnTurretButton.OnPressEvent.AddListener(()=>STTRunManager.Instance.buildingManager.SpawnGridElement(EPoolItem.Turret));
+        runManager.runEconomyManager.OnGoldChangeEvent += OnGoldOrPriceChange;
+        runManager.runEconomyManager.OnPriceChangeEvent += OnGoldOrPriceChange;
         runManager.buildingManager.OnDraggedItemSpawn += OnDraggedItemActivate;
         runManager.buildingManager.OnDraggedItemMove += OnDraggedItemMove;
         runManager.buildingManager.OnDraggedItemRelease += OnDraggedItemDeactivate;
+        runManager.runEconomyManager.OnDollarsGainEvent += OnDollarsGainEvent;
     }
 
     void OnRunFinished()
     {
-        TTRunManager runManager = TTRunManager.Instance;
-
+        STTRunManager runManager = STTRunManager.Instance;
         _spawnMineButton.OnPressEvent.RemoveAllListeners();
         _spawnTurretButton.OnPressEvent.RemoveAllListeners();
-        runManager.economyManager.OnGoldChangeEvent -= OnGoldOrPriceChange;
-        runManager.economyManager.OnPriceChangeEvent -= OnGoldOrPriceChange;
+        runManager.runEconomyManager.OnGoldChangeEvent -= OnGoldOrPriceChange;
+        runManager.runEconomyManager.OnPriceChangeEvent -= OnGoldOrPriceChange;
         runManager.buildingManager.OnDraggedItemSpawn -= OnDraggedItemActivate;
         runManager.buildingManager.OnDraggedItemMove -= OnDraggedItemMove;
         runManager.buildingManager.OnDraggedItemRelease -= OnDraggedItemDeactivate;
+        runManager.runEconomyManager.OnDollarsGainEvent -= OnDollarsGainEvent;
     }
 
     private void OnGoldOrPriceChange()
     {
-        TTRunManager runManager = TTRunManager.Instance;
+        STTRunManager runManager = STTRunManager.Instance;
 
-        bool canBuyCondition = runManager.economyManager.currentGold >= runManager.economyManager.currentPrice;
+        bool canBuyCondition = runManager.runEconomyManager.currentGold >= runManager.runEconomyManager.currentPrice;
         _spawnTurretButton.interactable = canBuyCondition;
         _spawnMineButton.interactable = canBuyCondition;
-        _minePriceTxt.text = runManager.economyManager.currentPrice.ToString();
-        _turretPriceTxt.text = runManager.economyManager.currentPrice.ToString();
-        _currentGoldTxt.text = runManager.economyManager.currentGold.ToString();
-
+        _minePriceTxt.text = runManager.runEconomyManager.currentPrice.ToString();
+        _turretPriceTxt.text = runManager.runEconomyManager.currentPrice.ToString();
+        _currentGoldTxt.text = runManager.runEconomyManager.currentGold.ToString();
     }
 
+    private void OnDollarsGainEvent()
+    {
+        _dollarsGainTxt.text = STTRunManager.Instance.runEconomyManager.runDollarsGain.ToString();
+    }
+    
     private void OnDraggedItemActivate(Vector2 position, TTGridElement element)
     {
         _draggedItemImg.gameObject.SetActive(true);

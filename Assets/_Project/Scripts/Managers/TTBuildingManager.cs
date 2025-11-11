@@ -39,7 +39,7 @@ public class TTBuildingManager
     
     public void SpawnGridElement(EPoolItem poolItem)
     {
-        _draggedItem = TTRunManager.Instance.pool.Get(poolItem, Vector3.zero).GetComponent<TTGridElement>();
+        _draggedItem = STTRunManager.Instance.pool.Get(poolItem, Vector3.zero).GetComponent<TTGridElement>();
         _draggedItem.Hide();
         OnDraggedItemSpawn?.Invoke(LeanTouch.Fingers.Last().ScreenPosition, _draggedItem);
         _isDraggedItemAnchored = false;
@@ -96,32 +96,32 @@ public class TTBuildingManager
                     else
                     {
                         _hoveredCell.AnchorElement(_draggedItem);
-                        TTRunManager.Instance.economyManager.DeductGold(TTRunManager.Instance.economyManager.currentPrice);
-                        TTRunManager.Instance.economyManager.IncreasePrice();
+                        STTRunManager.Instance.runEconomyManager.DeductGold(STTRunManager.Instance.runEconomyManager.currentPrice);
+                        STTRunManager.Instance.runEconomyManager.IncreasePrice();
                     }
                 }
                 else
                 {
                     if(_isDraggedItemAnchored)
                     {
-                        _draggedItem.gameObject.SetActive(true);
+                        _draggedItem.Show();
                     }
                     else
                     {
                         _draggedItem.ClearCells();
-                        TTRunManager.Instance.pool.Release(_draggedItem);
+                        STTRunManager.Instance.pool.Release(_draggedItem);
                     }
                 }
                 _hoveredCell = null;
             }
             else if(_isDraggedItemAnchored)
             {
-                _draggedItem.gameObject.SetActive(true);
+                _draggedItem.Show();
             }
             else
             {
                 _draggedItem.ClearCells();
-                TTRunManager.Instance.pool.Release(_draggedItem);
+                STTRunManager.Instance.pool.Release(_draggedItem);
             }
             OnDraggedItemRelease?.Invoke();
             _draggedItem = null;

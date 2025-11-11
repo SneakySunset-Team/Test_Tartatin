@@ -1,3 +1,5 @@
+using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using System;
 using TMPro;
 using UnityEngine;
@@ -10,41 +12,47 @@ using UnityEngine.UI;
 public class TTStartMenuManager : MonoBehaviour
 {
     [SerializeField]
-    Button _playBtn;
-
-    [SerializeField]
-    Button _upgradeBtn;
-
-    [SerializeField]
-    Button _skinBtn;
-
-    [SerializeField]
     Toggle _frToggle;
     
     [SerializeField]
+    Button _playBtn, _upgradeBtn, _skinBtn;
+
+    [SerializeField]
+    Button _cheatGetDollarsBtn, _cheatResetDollarsBtn;
+
+    [SerializeField]
     LocalizeStringEvent _dollarsTxt;
     
-    private IntVariable _dollars;
+    [SerializeField]
+    GameObject _upgradePanel, _skinPanel;
     
+    private IntVariable _dollars;
+
     void Start()
     {
-        _playBtn.onClick.AddListener(()=> TTMenuManager.Instance.ChangeState(EMenuState.Loading));
+        _playBtn.onClick.AddListener(()=> STTMenuManager.Instance.ChangeState(EMenuState.Loading));
         _frToggle.onValueChanged.AddListener((bool value) => ChangeLocal(value));
+        _cheatGetDollarsBtn.onClick.AddListener(()=> STTGameManager.Instance.AddDollars(100));
+        _cheatResetDollarsBtn.onClick.AddListener(()=> STTGameManager.Instance.DeductDollars(STTGameManager.Instance.currentDollars));
+        _dollars = _dollarsTxt.StringReference["dollars"] as  IntVariable;
+        _dollars.Value = STTGameManager.Instance.currentDollars;
+        _upgradeBtn.onClick.AddListener(() => _upgradePanel.SetActive(true));
+        _skinBtn.onClick.AddListener(() => _skinPanel.SetActive(true));
     }
 
     void OnEnable()
     {
-        _dollars = _dollarsTxt.StringReference["dollars"] as  IntVariable;
-        _dollars.Value = TTGameManager.Instance.currentDollars;
-        TTGameManager.Instance.OnDollarsChange += OnDollarChange;
+        STTGameManager.Instance.OnDollarsChange += OnDollarChange;
+        // Subscription happens after the callback on state change
+        OnDollarChange();
     }
 
     void OnDisable()
     {
-        TTGameManager.Instance.OnDollarsChange -= OnDollarChange;
-        
+        STTGameManager.Instance.OnDollarsChange -= OnDollarChange;
     }
 
+    
     private void ChangeLocal(bool toFrench)
     {
         string name = toFrench ? "fr" : "en";
@@ -54,6 +62,7 @@ public class TTStartMenuManager : MonoBehaviour
 
     private void OnDollarChange()
     {
-        _dollars.Value = TTGameManager.Instance.currentDollars;
+        if (_dollars == null || STTGameManager.Instance == null) return;
+        _dollars.Value = STTGameManager.Instance.currentDollars;
     }
 }

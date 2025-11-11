@@ -7,7 +7,7 @@ public class TTDeathZone : MonoBehaviour
     {
         if (other.tag == "Ennemy")
         {
-            TTRunManager.Instance.GameOver();
+            STTRunManager.Instance.GameOver();
         }
     }
 }

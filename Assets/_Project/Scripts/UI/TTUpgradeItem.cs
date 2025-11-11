@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
@@ -20,39 +21,71 @@ public class TTUpgradeItem : MonoBehaviour
     LocalizeStringEvent _upgradeDescriptionText;
     
     [SerializeField]
+    LocalizeStringEvent _upgradeDescriptionText_Max;
+    
+    [SerializeField]
     LocalizeStringEvent _upgradeBtnTxt;
 
+    [SerializeField]
+    TextMeshProUGUI _upgradeBtnTxt_Max;
+    
     IntVariable _upgradeCost;
     IntVariable _currentValue;
     IntVariable _nextValue;
     LocalizedString _upgradeDescription;
     
     private EUpgradeType _upgradeType;
-    
+
     public void Initialize(EUpgradeType upgradeType)
     {
         _upgradeType = upgradeType;
         _upgradeBtn.onClick.AddListener(()=> _upgradeData.LevelUpStat(upgradeType));
+        _upgradeIconImage.sprite = _upgradeData.upgradeData[upgradeType].icon;
+        
         _upgradeCost = _upgradeBtnTxt.StringReference["cost"] as IntVariable;
-        _currentValue = _upgradeDescriptionText.StringReference["current-value"] as  IntVariable;
-        _nextValue = _upgradeDescriptionText.StringReference["next-value"] as  IntVariable;
-        _upgradeDescription = _upgradeDescriptionText.StringReference["current-value"] as LocalizedString;
+        _currentValue = _upgradeDescriptionText.StringReference["current-upgrade-value"] as  IntVariable;
+        _nextValue = _upgradeDescriptionText.StringReference["next-upgrade-value"] as  IntVariable;
         
+        // Create a NEW LocalizedString instance for THIS specific upgrade item
+        var description = _upgradeData.upgradeData[upgradeType].localizationTableEntryReference.GetLocalizedString();
         
-        _upgradeDescription.TableEntryReference = _upgradeData.upgradeData[upgradeType]._descriptionTableEntryReference;
+        _upgradeDescriptionText.StringReference["upgrade-type"] = description;
+        _upgradeDescriptionText.RefreshString();
+        
+        _upgradeDescriptionText_Max.StringReference["upgrade-type"] = description;
+        _upgradeDescriptionText_Max.RefreshString();
+        
+        gameObject.SetActive(true);
     }
 
     public void UpdateItem()
     {
-        if (_upgradeData.IsUpgradeAvailable(_upgradeType))
+        var uData = _upgradeData.upgradeData[_upgradeType];
+        var currentLevelData = uData.levelData[uData.currentLevel];
+        if (!_upgradeData.IsUpgradeAvailable(_upgradeType))
         {
-            gameObject.SetActive(false);
+            _upgradeBtn.interactable = false;
+            
+            _upgradeBtnTxt.gameObject.SetActive(false);
+            _upgradeBtnTxt_Max.gameObject.SetActive(true);
+            
+            _upgradeDescriptionText.gameObject.SetActive(false);
+            _upgradeDescriptionText_Max.gameObject.SetActive(true);
         }
         else
         {
-            if(_upgradeData.IsUpgradeAvailable(_upgradeType))
-            gameObject.SetActive(true);
+            _upgradeBtnTxt.gameObject.SetActive(true);
+            _upgradeBtnTxt_Max.gameObject.SetActive(false);
             
+            _upgradeDescriptionText.gameObject.SetActive(true);
+            _upgradeDescriptionText_Max.gameObject.SetActive(false);
+            
+            var nextLevelData = uData.levelData[uData.currentLevel + 1];
+            bool canUpgrade = _upgradeData.CanUpgrade(_upgradeType);
+            _upgradeCost.Value = currentLevelData.levelUpCost;
+            _currentValue.Value = currentLevelData.value;
+            _nextValue.Value = nextLevelData.value;
+            _upgradeBtn.interactable = canUpgrade;
         }
     }
 }

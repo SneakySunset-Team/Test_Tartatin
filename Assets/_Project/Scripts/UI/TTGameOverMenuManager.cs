@@ -17,14 +17,14 @@ public class TTGameOverMenuManager : MonoBehaviour
 
     void Start()
     {
-        _tryAgainBtn.onClick.AddListener(()=> TTMenuManager.Instance.ChangeState(EMenuState.Loading));
-        _mainMenuBtn.onClick.AddListener(()=> TTMenuManager.Instance.ChangeState(EMenuState.Start));
+        _tryAgainBtn.onClick.AddListener(()=> STTMenuManager.Instance.ChangeState(EMenuState.Loading));
+        _mainMenuBtn.onClick.AddListener(()=> STTMenuManager.Instance.ChangeState(EMenuState.Start));
     }
 
     void OnEnable()
     {
         _dollars = _dollarsStringTxt.StringReference["dollars"] as  IntVariable;
-        _dollars.Value = TTGameManager.Instance.currentDollars;
+        _dollars.Value = STTRunManager.Instance.runEconomyManager.runDollarsGain;
     }
 }
 

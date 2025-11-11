@@ -38,7 +38,7 @@ public class TTGridElement : MonoBehaviour
         if (_currentHp <= 0)
         {
             ClearCells();
-            TTRunManager.Instance.pool.Release(this);
+            STTRunManager.Instance.pool.Release(this);
         }
         else
         {

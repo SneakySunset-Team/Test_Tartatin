@@ -3,7 +3,6 @@ using Sirenix.OdinInspector;
 using System;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 
 public partial class TTGridManager : TTSingleton<TTGridManager>

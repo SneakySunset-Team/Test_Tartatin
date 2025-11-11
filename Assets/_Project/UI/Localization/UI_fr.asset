@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1427579838464
-    m_Localized: SKINS
+    m_Localized: COSTUMES
     m_Metadata:
       m_Items: []
   - m_Id: 1516390031360
@@ -49,16 +49,16 @@ MonoBehaviour:
       m_Items:
       - rid: 9057057902274543908
   - m_Id: 72841573933056
-    m_Localized: '{cost}\nGemmes'
+    m_Localized: '{cost}\nEuros'
     m_Metadata:
       m_Items:
       - rid: 9057057902274543908
   - m_Id: 898089105989632
-    m_Localized: Menu
+    m_Localized: MENU
     m_Metadata:
       m_Items: []
   - m_Id: 898190004166656
-    m_Localized: "R\xE9essayer"
+    m_Localized: REESSAYER
     m_Metadata:
       m_Items: []
   - m_Id: 899056102776832
@@ -71,6 +71,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9057057902274543908
+  - m_Id: 1135725498310656
+    m_Localized: '{upgrade-type} est au niveau max'
+    m_Metadata:
+      m_Items:
+      - rid: 9057057902274543908
+  - m_Id: 1169805069754368
+    m_Localized: AJOUTE 100 OR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766246654287872
+    m_Localized: CONTINUER
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -83,3 +96,4 @@ MonoBehaviour:
         - id: 72841573933056
         - id: 899056102776832
         - id: 913488027557888
+        - id: 1135725498310656

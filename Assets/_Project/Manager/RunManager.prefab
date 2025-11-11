@@ -91,14 +91,47 @@ MonoBehaviour:
   _inactivePoolFolder: {fileID: 2437275212988508104}
   <waveManager>k__BackingField:
     _spawningPositionY: 6
-    _spawningWidth: 3
+    _spawningWidth: 2
+    _timeBeforeFirstWave: 30
+    _timeInBetweenWaves: 10
+    _minNumberOfEnnemies: 3
+    _maxNumberOfEnnemies: 12
+    _waveCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _numberOfWavesBeforeReachingMaximum: 10
+    _minTimerInBetweenSpawns: 0.2
+    _maxTimerInBetweenSpawns: 1
+    _numOfEnnemieByWavePostCurve: 2
     _gizmosIconPath: Target
     _gizmosLineColor: {r: 1, g: 0, b: 0, a: 1}
     _gizmosLineWidth: 10
-  <economyManager>k__BackingField:
+  <runEconomyManager>k__BackingField:
     _upgradeData: {fileID: 11400000, guid: 46b1aa1d0234cbf4c92f5471e24f08c0, type: 2}
     <currentGold>k__BackingField: 0
     <currentPrice>k__BackingField: 1
+    <runDollarsGain>k__BackingField: 0
 --- !u!1 &4923178520920038036
 GameObject:
   m_ObjectHideFlags: 0

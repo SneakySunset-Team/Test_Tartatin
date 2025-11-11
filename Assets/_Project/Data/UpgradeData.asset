@@ -1,0 +1,413 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b148cd9445b4c51862079b1d8fe9757, type: 3}
+  m_Name: UpgradeData
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: acfbcbc4a9a9d5d4397f05337a1cbd54, type: 3}
+    - {fileID: 21300000, guid: b0dab96bc5f480240b41ff5f9494b3c2, type: 3}
+    - {fileID: 21300000, guid: cf5346d53f842d84db4c6968f76dd41c, type: 3}
+    - {fileID: 21300000, guid: fb4daac5821ad284d8199f07b869ea89, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: <upgradeData>k__BackingField
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[EUpgradeType, Assembly-CSharp],[SStatUpgradeData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[EUpgradeType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|SStatUpgradeData, Assembly-CSharp
+    - Name: levelData
+      Entry: 7
+      Data: 3|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 3
+    - Name: value
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 10
+    - Name: value
+      Entry: 3
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 30
+    - Name: value
+      Entry: 3
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 100
+    - Name: value
+      Entry: 3
+      Data: 200
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: currentLevel
+      Entry: 3
+      Data: 0
+    - Name: icon
+      Entry: 10
+      Data: 0
+    - Name: localizationTableEntryReference
+      Entry: 7
+      Data: 4|TTLocalizationTableEntryReference, Assembly-CSharp
+    - Name: tableCollectionName
+      Entry: 1
+      Data: Upgrades
+    - Name: keyId
+      Entry: 3
+      Data: 8869093376
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 5|SStatUpgradeData, Assembly-CSharp
+    - Name: levelData
+      Entry: 7
+      Data: 6|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 10
+    - Name: value
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 50
+    - Name: value
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 200
+    - Name: value
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: currentLevel
+      Entry: 3
+      Data: 0
+    - Name: icon
+      Entry: 10
+      Data: 1
+    - Name: localizationTableEntryReference
+      Entry: 7
+      Data: 7|TTLocalizationTableEntryReference, Assembly-CSharp
+    - Name: tableCollectionName
+      Entry: 1
+      Data: Upgrades
+    - Name: keyId
+      Entry: 3
+      Data: 142742888448
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 8|SStatUpgradeData, Assembly-CSharp
+    - Name: levelData
+      Entry: 7
+      Data: 9|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 20
+    - Name: value
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 50
+    - Name: value
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 200
+    - Name: value
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 2000
+    - Name: value
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: currentLevel
+      Entry: 3
+      Data: 0
+    - Name: icon
+      Entry: 10
+      Data: 2
+    - Name: localizationTableEntryReference
+      Entry: 7
+      Data: 10|TTLocalizationTableEntryReference, Assembly-CSharp
+    - Name: tableCollectionName
+      Entry: 1
+      Data: Upgrades
+    - Name: keyId
+      Entry: 3
+      Data: 107452014592
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 11|SStatUpgradeData, Assembly-CSharp
+    - Name: levelData
+      Entry: 7
+      Data: 12|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 50
+    - Name: value
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 200
+    - Name: value
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 1000
+    - Name: value
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
+      Entry: 3
+      Data: 5000
+    - Name: value
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: currentLevel
+      Entry: 3
+      Data: 0
+    - Name: icon
+      Entry: 10
+      Data: 3
+    - Name: localizationTableEntryReference
+      Entry: 7
+      Data: 13|TTLocalizationTableEntryReference, Assembly-CSharp
+    - Name: tableCollectionName
+      Entry: 1
+      Data: Upgrades
+    - Name: keyId
+      Entry: 3
+      Data: 221201539072
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

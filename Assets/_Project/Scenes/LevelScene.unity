@@ -2927,46 +2927,6 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._spawningWidth
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._maxNumberOfEnnemies
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._minNumberOfEnnemies
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._timeBeforeFirstWave
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._waveCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._numberOfWavesBeforeReachingMaximum
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._waveCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._waveCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._waveCurve.m_Curve.Array.data[0].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
-      propertyPath: <waveManager>k__BackingField._waveCurve.m_Curve.Array.data[0].outSlope
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6179432328422327541, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

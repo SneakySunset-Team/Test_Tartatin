@@ -25,11 +25,13 @@ public class TTEnnemyBehaviour : MonoBehaviour
     {
         hpNumber = _startHpNumber;
         _hpBarFill.fillAmount = 1;
+        OnDisableEvent = null;
     }
 
     void OnDisable()
     {
         OnDisableEvent?.Invoke(this);
+        transform.position = Vector2.zero;
     }
     
     void FixedUpdate()
@@ -43,7 +45,8 @@ public class TTEnnemyBehaviour : MonoBehaviour
         _hpBarFill.fillAmount = (float)hpNumber / (float)_startHpNumber;
         if (hpNumber <= 0)
         {
-            TTRunManager.Instance.pool.Release(this);
+            STTRunManager.Instance.runEconomyManager.AddDollars(1);
+            STTRunManager.Instance.pool.Release(this);
         }
     }
     
@@ -52,7 +55,7 @@ public class TTEnnemyBehaviour : MonoBehaviour
         if (other.gameObject.TryGetComponent<TTGridElement>(out TTGridElement element))
         {
             element.TakeDamage(damage);
-            TTRunManager.Instance.pool.Release(this);
+            STTRunManager.Instance.pool.Release(this);
         }
     }
 }

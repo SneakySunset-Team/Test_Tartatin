@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TTTextureBaker
 {
+    #if UNITY_EDITOR
     [MenuItem("Assets/Bake Render Texture to Texture2D")]
     public static void BakeRenderTexture()
     {
@@ -32,4 +33,5 @@ public class TTTextureBaker
 
         Object.DestroyImmediate(texture);
     }
+    #endif
 }

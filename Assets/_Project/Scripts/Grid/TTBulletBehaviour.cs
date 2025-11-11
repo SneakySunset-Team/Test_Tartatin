@@ -57,13 +57,13 @@ public class TTBulletBehaviour : MonoBehaviour
         if (other.gameObject.tag == "Ennemy" && other.gameObject.TryGetComponent<TTEnnemyBehaviour>(out var ennemy))
         {
             ennemy.TakeDamage(_damage);
-            TTRunManager.Instance.pool.Release(this);
+            STTRunManager.Instance.pool.Release(this);
         }
     }
 
     IEnumerator LifeCoroutine()
     {
         yield return new WaitForSeconds(_lifeTime);
-        TTRunManager.Instance.pool.Release(this);
+        STTRunManager.Instance.pool.Release(this);
     }
 }

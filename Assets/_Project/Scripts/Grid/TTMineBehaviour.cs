@@ -48,7 +48,7 @@ public class TTMineBehaviour : MonoBehaviour
         {
             yield return _waitUntilNotHidden;
             yield return _miningWait;
-            TTRunManager.Instance.economyManager.AddGold(_upgradeData.GetStatValue(EUpgradeType.MineGoldPerTickAmount));
+            STTRunManager.Instance.runEconomyManager.AddGold(_upgradeData.GetStatValue(EUpgradeType.MineGoldPerTickAmount));
             SpawnParticle();
         }
     }

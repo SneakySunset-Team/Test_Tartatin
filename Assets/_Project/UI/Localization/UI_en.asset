@@ -49,16 +49,16 @@ MonoBehaviour:
       m_Items:
       - rid: 9057057902274543907
   - m_Id: 72841573933056
-    m_Localized: '{cost}\nGems'
+    m_Localized: '{cost}\nDollars'
     m_Metadata:
       m_Items:
       - rid: 9057057902274543907
   - m_Id: 898089105989632
-    m_Localized: Main Menu
+    m_Localized: MAIN MENU
     m_Metadata:
       m_Items: []
   - m_Id: 898190004166656
-    m_Localized: Try Again
+    m_Localized: TRY AGAIN
     m_Metadata:
       m_Items: []
   - m_Id: 899056102776832
@@ -71,6 +71,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9057057902274543907
+  - m_Id: 1135725498310656
+    m_Localized: '{upgrade-type} is at max level'
+    m_Metadata:
+      m_Items:
+      - rid: 9057057902274543907
+  - m_Id: 1169805069754368
+    m_Localized: ADD 100 GOLD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766246654287872
+    m_Localized: RESUME
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -83,3 +96,4 @@ MonoBehaviour:
         - id: 72841573933056
         - id: 899056102776832
         - id: 913488027557888
+        - id: 1135725498310656

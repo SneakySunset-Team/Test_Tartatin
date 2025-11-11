@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
+#if UNITY_EDITOR
 using UnityEditor.Rendering;
+#endif
 using UnityEngine;
 
 
@@ -63,6 +65,4 @@ public class TTPoolingSystem<J, T> where T : MonoBehaviour
         item.gameObject.SetActive(false);
         item.transform.parent = _inactivePoolFolder.transform;
     }
-
-    
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = System.Random;
 
 public enum EPoolItem {Ennemy, Turret, Mine, Bullet}
-public class TTRunManager : TTSingleton<TTRunManager>
+public class STTRunManager : TTSingleton<STTRunManager>
 {
     [SerializeField, FoldoutGroup("Pooling")] TTPoolingData _poolingData;
     [SerializeField, FoldoutGroup("Pooling")] Transform _activePoolFolder;
@@ -13,14 +13,15 @@ public class TTRunManager : TTSingleton<TTRunManager>
 
     [field : SerializeField, HideInInspector] public TTPoolingSystem<EPoolItem, MonoBehaviour> pool { get; private set; }
     [field : SerializeField] public TTWaveManager waveManager { get; private set; }
-    [field : SerializeField] public TTEconomyManager economyManager { get; private set; }
+    [field : SerializeField] public TTRunEconomyManager runEconomyManager { get; private set; }
     [field : SerializeField, HideInInspector] public TTBuildingManager buildingManager { get; private set; }
 
     public void GameOver()
     {
         Debug.Log("Game Over");
-        TTGameManager.Instance.OnRunFinished();
-        TTMenuManager.Instance.ChangeState(EMenuState.GameOver);
+        STTGameManager.Instance.AddDollars(runEconomyManager.runDollarsGain);
+        STTGameManager.Instance.OnRunFinished();
+        STTMenuManager.Instance.ChangeState(EMenuState.GameOver);
     }
     
     protected override void Awake()
@@ -33,10 +34,10 @@ public class TTRunManager : TTSingleton<TTRunManager>
     // yield a frame to wait for Play Menu to be Enabled
     IEnumerator Start()
     {
-        yield return new WaitForEndOfFrame();
-        TTGameManager.Instance.OnRunStarted();
+        yield return new WaitForSeconds(1f);
+        STTGameManager.Instance.OnRunStarted();
         buildingManager.OnStart();
-        economyManager.OnStart();
+        runEconomyManager.OnStart();
         waveManager.OnStart();
     }
 

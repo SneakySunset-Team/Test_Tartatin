@@ -48,15 +48,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 766246654287872
-    m_Key: C
+    m_Key: Resume (Caps Lock)
     m_Metadata:
       m_Items: []
   - m_Id: 898089105989632
-    m_Key: Main Menu
+    m_Key: Main Menu (Caps Lock)
     m_Metadata:
       m_Items: []
   - m_Id: 898190004166656
-    m_Key: Try Again
+    m_Key: Try Again (Caps Lock)
     m_Metadata:
       m_Items: []
   - m_Id: 899056102776832
@@ -65,6 +65,16 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 913488027557888
     m_Key: Current Dollars
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1135725498310656
+    m_Key: 'Upgrade Description max
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1169805069754368
+    m_Key: Add Gold
     m_Metadata:
       m_Items: []
   m_Metadata:
