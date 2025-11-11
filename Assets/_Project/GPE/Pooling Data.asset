@@ -15,7 +15,11 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: -1213391368645419431, guid: 1a0568049f6cd28459deb95bd7827747, type: 3}
+    - {fileID: 6204770365256250779, guid: 885588a04da176d4c867c9baed9be41b, type: 3}
+    - {fileID: 7309416874281481917, guid: f86f1c91d2957a241b3c01a5075f4458, type: 3}
+    - {fileID: 13042450146139043, guid: 8cf276251a7951d47b61453bf3c3e437, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -23,13 +27,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: <poolingElements>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[TTRunManager+EPoolItem, Assembly-CSharp],[TTPoolingSystem`2+SPoolingElement[[TTRunManager+EPoolItem,
+      Data: 0|System.Collections.Generic.Dictionary`2[[EPoolItem, Assembly-CSharp],[TTPoolingSystem`2+SPoolingElement[[EPoolItem,
         Assembly-CSharp],[UnityEngine.MonoBehaviour, UnityEngine.CoreModule]], Assembly-CSharp]],
         mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[TTRunManager+EPoolItem,
-        Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[EPoolItem, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -41,7 +45,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
@@ -50,14 +54,14 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 7
-      Data: TTPoolingSystem`2+SPoolingElement[[TTRunManager+EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
+      Data: TTPoolingSystem`2+SPoolingElement[[EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
         UnityEngine.CoreModule]], Assembly-CSharp
     - Name: prefab
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: baseNumber
       Entry: 3
-      Data: 5
+      Data: 30
     - Name: 
       Entry: 8
       Data: 
@@ -72,14 +76,14 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: TTPoolingSystem`2+SPoolingElement[[TTRunManager+EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
+      Data: TTPoolingSystem`2+SPoolingElement[[EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
         UnityEngine.CoreModule]], Assembly-CSharp
     - Name: prefab
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: baseNumber
       Entry: 3
-      Data: 5
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -94,14 +98,36 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: TTPoolingSystem`2+SPoolingElement[[TTRunManager+EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
+      Data: TTPoolingSystem`2+SPoolingElement[[EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
         UnityEngine.CoreModule]], Assembly-CSharp
     - Name: prefab
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 2
     - Name: baseNumber
       Entry: 3
-      Data: 5
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: TTPoolingSystem`2+SPoolingElement[[EPoolItem, Assembly-CSharp],[UnityEngine.MonoBehaviour,
+        UnityEngine.CoreModule]], Assembly-CSharp
+    - Name: prefab
+      Entry: 10
+      Data: 3
+    - Name: baseNumber
+      Entry: 3
+      Data: 40
     - Name: 
       Entry: 8
       Data: 

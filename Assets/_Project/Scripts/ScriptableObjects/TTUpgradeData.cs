@@ -35,7 +35,7 @@ public class TTUpgradeData : SerializedScriptableObject
     {
         var levelData= upgradeData[upgradeType].levelData;
         int currentLevel = upgradeData[upgradeType].currentLevel;
-        return TTGameManager.Instance.currentDollarAmount >= levelData[currentLevel].levelUpCost;
+        return TTGameManager.Instance.currentDollars >= levelData[currentLevel].levelUpCost;
     }
     
     
@@ -43,10 +43,13 @@ public class TTUpgradeData : SerializedScriptableObject
     [OnInspectorInit]
     private void Init()
     {
-        upgradeData = new Dictionary<EUpgradeType, SStatUpgradeData>();
-        foreach (EUpgradeType upgradeType in Enum.GetValues(typeof(EUpgradeType)))
+        if (upgradeData == null)
         {
-            upgradeData.Add(upgradeType, new SStatUpgradeData());
+            upgradeData = new Dictionary<EUpgradeType, SStatUpgradeData>();
+            foreach (EUpgradeType upgradeType in Enum.GetValues(typeof(EUpgradeType)))
+            {
+                upgradeData.Add(upgradeType, new SStatUpgradeData());
+            }
         }
     }
     #endif

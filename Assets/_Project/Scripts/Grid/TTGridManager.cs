@@ -1,4 +1,7 @@
+using Lean.Touch;
 using Sirenix.OdinInspector;
+using System;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
@@ -22,6 +25,21 @@ public partial class TTGridManager : TTSingleton<TTGridManager>
 
     [SerializeField, FoldoutGroup("Placement")]
     float _size, spacing;
+
+    public TTCell GetCellFromWorldPosition(Vector2 worldPosition)
+    {
+        float cellSize = _size + spacing;
+    
+        Vector2 localPosition = worldPosition - (Vector2)_gridRoot.position;
+    
+        int column = Mathf.RoundToInt(
+            (localPosition.x + (float)(columns - 1) / 2f * cellSize) / cellSize);
+        int row = Mathf.RoundToInt(
+            (localPosition.y + (float)(rows - 1) / 2f * cellSize) / cellSize);
+    
+        if (row < 0 || row >= rows || column < 0 || column >= columns) return null;
+        else return grid[row * columns + column];
+    }
     
     #if UNITY_EDITOR
     [HorizontalGroup("Split", 0.5f)]
@@ -30,11 +48,12 @@ public partial class TTGridManager : TTSingleton<TTGridManager>
     {
         ClearGrid();
 
+        grid = new TTCell[rows * columns];
         for (int row = 0; row < rows; row++)
         {
             for (int column = 0; column < columns; column++)
             {
-                CreateCell(row, column);
+                grid [row * columns + column] = CreateCell(row, column);
             }
         }
     }
@@ -50,21 +69,24 @@ public partial class TTGridManager : TTSingleton<TTGridManager>
         grid = null;
     }
 
-    private void CreateCell(int row, int column)
+    private TTCell CreateCell(int row, int column)
     {
         TTCell cell = PrefabUtility.InstantiatePrefab(_cellPrefab, _gridRoot) as TTCell;
         if (!cell)
         {
             Debug.LogError($"Cell {row}, {column} was not created");
-            return;
+            return null;
         }
         cell.coordinates = new Vector2Int(row, column);
-        cell.transform.position = new Vector3(
+        cell.transform.localPosition = new Vector3(
             column * (_size + spacing) - (float)(columns - 1) / (float)2 * (_size + spacing), 
             row * (_size + spacing) - (float)(rows - 1) / (float)2 * (_size + spacing),
             0);
+        //cell.transform.position += _gridRoot.position;
         
         cell.transform.localScale = Vector3.one * _size;
+        cell.name = $"Cell {row}, {column}";
+        return cell;
     }
     #endif
 }

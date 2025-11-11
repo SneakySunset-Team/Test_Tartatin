@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.PersistentVariables;
 using UnityEngine.UI;
 
@@ -16,10 +17,10 @@ public class TTUpgradeItem : MonoBehaviour
     Image _upgradeIconImage;
     
     [SerializeField]
-    LocalizedString _upgradeDescriptionText;
+    LocalizeStringEvent _upgradeDescriptionText;
     
     [SerializeField]
-    LocalizedString _upgradeBtnTxt;
+    LocalizeStringEvent _upgradeBtnTxt;
 
     IntVariable _upgradeCost;
     IntVariable _currentValue;
@@ -32,10 +33,10 @@ public class TTUpgradeItem : MonoBehaviour
     {
         _upgradeType = upgradeType;
         _upgradeBtn.onClick.AddListener(()=> _upgradeData.LevelUpStat(upgradeType));
-        _upgradeCost = _upgradeBtnTxt["cost"] as IntVariable;
-        _currentValue = _upgradeDescriptionText["current-value"] as  IntVariable;
-        _nextValue = _upgradeDescriptionText["next-value"] as  IntVariable;
-        _upgradeDescription = _upgradeDescriptionText["current-value"] as LocalizedString;
+        _upgradeCost = _upgradeBtnTxt.StringReference["cost"] as IntVariable;
+        _currentValue = _upgradeDescriptionText.StringReference["current-value"] as  IntVariable;
+        _nextValue = _upgradeDescriptionText.StringReference["next-value"] as  IntVariable;
+        _upgradeDescription = _upgradeDescriptionText.StringReference["current-value"] as LocalizedString;
         
         
         _upgradeDescription.TableEntryReference = _upgradeData.upgradeData[upgradeType]._descriptionTableEntryReference;

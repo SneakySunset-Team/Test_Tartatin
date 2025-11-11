@@ -21,14 +21,14 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: <levelData>k__BackingField
+    - Name: <upgradeData>k__BackingField
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[TTUpgradeData+EUpgradeType,
-        Assembly-CSharp],[TTUpgradeData+SStatUpgradeData, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[EUpgradeType, Assembly-CSharp],[SStatUpgradeData,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[TTUpgradeData+EUpgradeType,
-        Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[EUpgradeType, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -49,22 +49,49 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 7
-      Data: TTUpgradeData+SStatUpgradeData, Assembly-CSharp
+      Data: 2|SStatUpgradeData, Assembly-CSharp
     - Name: levelData
       Entry: 7
-      Data: TTUpgradeData+SStatLevelData, Assembly-CSharp
-    - Name: upgradeCost
+      Data: 3|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: currentLevel
       Entry: 3
       Data: 0
+    - Name: icon
+      Entry: 6
+      Data: 
+    - Name: _descriptionTableEntryReference
+      Entry: 7
+      Data: UnityEngine.Localization.Tables.TableEntryReference, Unity.Localization
+    - Name: m_KeyId
+      Entry: 3
+      Data: 0
+    - Name: m_Key
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -79,22 +106,49 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: TTUpgradeData+SStatUpgradeData, Assembly-CSharp
+      Data: 4|SStatUpgradeData, Assembly-CSharp
     - Name: levelData
       Entry: 7
-      Data: TTUpgradeData+SStatLevelData, Assembly-CSharp
-    - Name: upgradeCost
+      Data: 5|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: currentLevel
       Entry: 3
       Data: 0
+    - Name: icon
+      Entry: 6
+      Data: 
+    - Name: _descriptionTableEntryReference
+      Entry: 7
+      Data: UnityEngine.Localization.Tables.TableEntryReference, Unity.Localization
+    - Name: m_KeyId
+      Entry: 3
+      Data: 0
+    - Name: m_Key
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -109,22 +163,49 @@ MonoBehaviour:
       Data: 2
     - Name: $v
       Entry: 7
-      Data: TTUpgradeData+SStatUpgradeData, Assembly-CSharp
+      Data: 6|SStatUpgradeData, Assembly-CSharp
     - Name: levelData
       Entry: 7
-      Data: TTUpgradeData+SStatLevelData, Assembly-CSharp
-    - Name: upgradeCost
+      Data: 7|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: currentLevel
       Entry: 3
       Data: 0
+    - Name: icon
+      Entry: 6
+      Data: 
+    - Name: _descriptionTableEntryReference
+      Entry: 7
+      Data: UnityEngine.Localization.Tables.TableEntryReference, Unity.Localization
+    - Name: m_KeyId
+      Entry: 3
+      Data: 0
+    - Name: m_Key
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -139,22 +220,49 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 7
-      Data: TTUpgradeData+SStatUpgradeData, Assembly-CSharp
+      Data: 8|SStatUpgradeData, Assembly-CSharp
     - Name: levelData
       Entry: 7
-      Data: TTUpgradeData+SStatLevelData, Assembly-CSharp
-    - Name: upgradeCost
+      Data: 9|SStatLevelData[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: SStatLevelData, Assembly-CSharp
+    - Name: levelUpCost
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: currentLevel
       Entry: 3
       Data: 0
+    - Name: icon
+      Entry: 6
+      Data: 
+    - Name: _descriptionTableEntryReference
+      Entry: 7
+      Data: UnityEngine.Localization.Tables.TableEntryReference, Unity.Localization
+    - Name: m_KeyId
+      Entry: 3
+      Data: 0
+    - Name: m_Key
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

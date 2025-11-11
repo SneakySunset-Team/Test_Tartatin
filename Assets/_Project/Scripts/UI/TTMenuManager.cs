@@ -10,13 +10,16 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public enum EMenuState {Start, Loading, Play, Pause, GameOver}
+public enum EMenuState { Start, Loading, Play, Pause, GameOver,None}
 
 [Serializable]
 public class TTMenuManager :  TTSingleton<TTMenuManager>
 {
-    [field : SerializeField, ReadOnly, HideInEditorMode] public EMenuState currentState { get; private set; } = EMenuState.Start;
-    [field : SerializeField, ReadOnly, HideInEditorMode] public EMenuState previousState { get; private set; } = EMenuState.Start;
+    [HideInInspector]
+    public Action<EMenuState, EMenuState> OnMenuStateChangedEvent;
+    
+    [field : SerializeField, ReadOnly, HideInEditorMode] public EMenuState currentState { get; private set; } = EMenuState.None;
+    [field : SerializeField, ReadOnly, HideInEditorMode] public EMenuState previousState { get; private set; } = EMenuState.None;
     [field : SerializeField, HideInPlayMode] private EMenuState _startState = EMenuState.Start;
     [OdinSerialize, DictionaryDrawerSettings()] private Dictionary<EMenuState, SMenuSettings> _menuSettings = new Dictionary<EMenuState, SMenuSettings>();
     [field : SerializeField, ReadOnly, HideInEditorMode] public bool isGamePaused { get; private set; } = false;
@@ -39,15 +42,21 @@ public class TTMenuManager :  TTSingleton<TTMenuManager>
                 Debug.LogWarning($"No Menu Settings for the menu : {menuState.ToString()}");
                 continue;
             }
-            _menuSettings[menuState].Initialize();
+            _menuSettings[menuState].Initialize(menuState);
         }
         ChangeState(_startState);
     }
 
     public void ChangeState(EMenuState newState)
     {
+        if (currentState == newState)
+        {
+            Debug.LogWarning($"Changing state to active state {newState}");
+            return;
+        }
         previousState = currentState;
         currentState = newState;
+        OnMenuStateChangedEvent?.Invoke(newState, previousState);
         OnStateExit();
         OnStateEnter();
     }
@@ -55,6 +64,7 @@ public class TTMenuManager :  TTSingleton<TTMenuManager>
     private void OnStateEnter()
     {
         _menuSettings[currentState].menuCanvas.gameObject.SetActive(true);
+        _menuSettings[currentState].menuCanvas.transform.SetSiblingIndex(0);
         StartCoroutine(TransitionsCoroutine());
         
         switch (currentState)
@@ -84,16 +94,23 @@ public class TTMenuManager :  TTSingleton<TTMenuManager>
     private IEnumerator TransitionsCoroutine()
     {
         int activeTransitionsNumber = 0;
-        foreach (var transition in _menuSettings[currentState].transitions)
+
+        if (_menuSettings[currentState].transitions != null)
         {
-            activeTransitionsNumber++;
-            transition.DoTransition(true, ()=> activeTransitionsNumber = activeTransitionsNumber - 1);
+            foreach (var transition in _menuSettings[currentState].transitions)
+            {
+                activeTransitionsNumber++;
+                transition.DoTransition(true, () => activeTransitionsNumber = activeTransitionsNumber - 1);
+            }
         }
-        
-        foreach (var transition in _menuSettings[previousState].transitions)
+
+        if (_menuSettings[previousState].transitions != null)
         {
-            activeTransitionsNumber++;
-            transition.DoTransition(false, ()=> activeTransitionsNumber = activeTransitionsNumber - 1);
+            foreach (var transition in _menuSettings[previousState].transitions)
+            {
+                activeTransitionsNumber++;
+                transition.DoTransition(false, ()=> activeTransitionsNumber = activeTransitionsNumber - 1);
+            }
         }
         
         yield return new WaitUntil(() => activeTransitionsNumber == 0);
@@ -152,8 +169,8 @@ public class TTMenuManager :  TTSingleton<TTMenuManager>
             Vector2? previousPos = null;
             for (int i = 0; i < _menuGizmosResolution + 1; i++)
             {
-                float xLerp = moveTransition.xAnimationCurve != null ? Mathf.Lerp(target.anchoredPosition.x + moveTransition.movement.x, target.anchoredPosition.x, moveTransition.xAnimationCurve.Evaluate((float)i / _menuGizmosResolution)) : 0;
-                float yLerp = moveTransition.yAnimationCurve != null ? Mathf.Lerp(target.anchoredPosition.y + moveTransition.movement.y, target.anchoredPosition.y, moveTransition.yAnimationCurve.Evaluate((float)i / _menuGizmosResolution)) : 0;
+                float xLerp = moveTransition.xAnimationCurve != null ? Mathf.Lerp(target.anchoredPosition.x - moveTransition.movement.x, target.anchoredPosition.x, moveTransition.xAnimationCurve.Evaluate((float)i / _menuGizmosResolution)) : 0;
+                float yLerp = moveTransition.yAnimationCurve != null ? Mathf.Lerp(target.anchoredPosition.y - moveTransition.movement.y, target.anchoredPosition.y, moveTransition.yAnimationCurve.Evaluate((float)i / _menuGizmosResolution)) : 0;
                 Vector3 lerpPos = new Vector3(xLerp, yLerp, 0);
 
                 // Convert lerpPos from anchored position to world position
@@ -187,9 +204,14 @@ public struct SMenuSettings
     [SerializeField]
     public TTUITransition[] transitions;
 
-    public void Initialize()
+    public void Initialize(EMenuState menuState)
     {
         if(transitions == null) return;
+        if (menuCanvas == null)
+            Debug.LogWarning($"No Canvas set for menu : {menuState.ToString()}");         
+        else
+            menuCanvas.gameObject.SetActive(false);
+            
         transitions.ForEach(transition => transition.Initialize());
     }
 

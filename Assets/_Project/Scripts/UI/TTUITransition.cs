@@ -23,7 +23,6 @@ public abstract class TTUITransition
         _sequence.SetUpdate(UpdateType.Normal, true);
 
         _sequence.SetDelay(delayBeforeTransition);
-        _sequence.OnComplete(callback.Invoke);
     }
 }
 
@@ -35,8 +34,15 @@ public class TTUITransition_Fade : TTUITransition
     public override void DoTransition(bool activate, Action callback)
     {
         base.DoTransition(activate, callback);
+        float startValue = activate ? 0 : 1;
         float endValue = activate ? 1 : 0;
-        _sequence.Append(canvasGroup.DOFade(endValue, duration));
+        canvasGroup.alpha = startValue;
+        
+        if(animationCurve != null)
+            _sequence.Append(canvasGroup.DOFade(endValue, duration).SetEase(animationCurve));
+        else
+            _sequence.Append(canvasGroup.DOFade(endValue, duration).SetEase(Ease.Linear));
+        _sequence.OnComplete(()=> callback?.Invoke());
     }
 } 
     
@@ -58,15 +64,26 @@ public class TTUITransition_Move : TTUITransition
         base.Initialize();
         _transform = canvasGroup.transform as RectTransform;
         startPosition = _transform.anchoredPosition;
-        endPosition = startPosition + movement;
+        endPosition = startPosition - movement;
     }
         
     public override void DoTransition(bool activate, Action callback)
     {
         base.DoTransition(activate, callback);
         Vector2 end = activate ? startPosition : endPosition;
-            
-        _sequence.Append(_transform.DOMoveX(end.x, duration).SetEase(xAnimationCurve));
-        _sequence.Join(_transform.DOMoveX(end.y, duration).SetEase(yAnimationCurve));
+        Vector2 start = activate ? endPosition : startPosition;
+        _transform.anchoredPosition = start;
+        
+        if(xAnimationCurve != null)
+            _sequence.Append(_transform.DOAnchorPosX(end.x, duration).SetEase(xAnimationCurve));
+        else 
+            _sequence.Append(_transform.DOAnchorPosX(end.x, duration).SetEase(Ease.Linear));
+        
+        if (yAnimationCurve != null)
+            _sequence.Join(_transform.DOAnchorPosY(end.y, duration).SetEase(yAnimationCurve));
+        else
+            _sequence.Join(_transform.DOAnchorPosY(end.y, duration).SetEase(Ease.Linear));
+        
+        _sequence.OnComplete(()=> callback?.Invoke());
     }
 } 

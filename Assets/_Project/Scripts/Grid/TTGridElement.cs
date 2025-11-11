@@ -4,52 +4,69 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class TTGridElement : MonoBehaviour
 {
-    [ReadOnly]
-    public bool isAnchored = false;
-
+    public Action OnHideEvent;
+    public Action OnShowEvent;
+    
     [SerializeField, ReadOnly, HideInEditorMode]
     public List<TTCell> cells = new List<TTCell>();
-
+    
     [SerializeField]
     int _baseHp;
 
     [SerializeField, HideInEditorMode]
     int _currentHp;
+    
+    [SerializeField, HideInPlayMode]
+    SpriteRenderer _spriteRenderer;
 
+    [SerializeField, HideInPlayMode]
+    Image _hpBarFill;
+    
     void OnEnable()
     {
-        isAnchored = false;
         _currentHp = _baseHp;
-        cells = new List<TTCell>();
     }
 
-    void Update()
+    public void TakeDamage(int damage)
     {
-        if (!isAnchored)
+        _currentHp -= damage;
+        _hpBarFill.fillAmount = 1;
+        if (_currentHp <= 0)
         {
-            transform.position = LeanTouch.Fingers[0].GetWorldPosition(10, Camera.main);
+            ClearCells();
+            TTRunManager.Instance.pool.Release(this);
+        }
+        else
+        {
+            _hpBarFill.fillAmount = (float)_currentHp / _baseHp;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    public void ClearCells()
     {
-        if (other.gameObject.tag == "Ennemy")
-        {
-            // TODO : Get Ennemy Damage
-            int ennemyDamage = 1;
-            _currentHp -= ennemyDamage;
-            if (_currentHp <= 0)
-            {
-                cells.ForEach(cell => cell.ClearGridElement());
-                TTRunManager.Instance.pool.Release(this);
-            }
-            else
-            {
-                // TODO : Update Hp World UI
-            }
-        }
+        cells.ForEach(cell => cell.ClearGridElement()); 
+        cells.Clear();
+    }
+    
+    public Sprite GetSprite() => _spriteRenderer.sprite;
+    
+    public Color GetColor() => _spriteRenderer.color;
+
+    public void Hide()
+    {
+        _hpBarFill.transform.parent.gameObject.SetActive(false);
+        _spriteRenderer.enabled = false;
+        OnHideEvent?.Invoke();
+    }
+
+    public void Show()
+    {
+        _hpBarFill.transform.parent.gameObject.SetActive(true);
+        _spriteRenderer.enabled = true;
+        OnShowEvent?.Invoke();
     }
 }

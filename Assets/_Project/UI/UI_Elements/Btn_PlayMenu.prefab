@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 5879502184448
       objectReference: {fileID: 0}
+    - target: {fileID: 6041877476306819803, guid: 849a1968877fcfa4ebe20d739c8f2395, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8533587738886474645, guid: 849a1968877fcfa4ebe20d739c8f2395, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

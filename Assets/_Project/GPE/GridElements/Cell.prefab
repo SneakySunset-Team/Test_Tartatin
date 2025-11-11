@@ -101,3 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinates: {x: 0, y: 0}
+  <gridElement>k__BackingField: {fileID: 0}
+  _spriteRenderer: {fileID: 2883715178204666571}
+  _highlightColor: {r: 1, g: 0.89918447, b: 0, a: 1}
+  _highlightNegationColor: {r: 1, g: 0.0141509175, b: 0.1645551, a: 1}

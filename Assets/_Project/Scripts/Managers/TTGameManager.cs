@@ -9,6 +9,14 @@ using UnityEngine.Serialization;
 
 public class TTGameManager : TTSingleton<TTGameManager>
 {
+    [HideInInspector]
+    public Action OnRunStartedEvent;
+    [HideInInspector]
+    public Action OnRunFinishedEvent;
+    
+    [HideInInspector]
+    public Action OnDollarsChange;
+    
     #if UNITY_EDITOR
     [SerializeField, BoxGroup("Level"), HideInPlayMode]
     SceneAsset _levelSceneAsset;
@@ -18,7 +26,7 @@ public class TTGameManager : TTSingleton<TTGameManager>
     string _levelSceneName;
 
     [field: SerializeField, BoxGroup("Currency")]
-    public int currentDollarAmount { get; private set; }
+    public int currentDollars { get; private set; }
     
     [field: SerializeField, BoxGroup("Currency")]
     public TTUpgradeData _upgradeData { get; private set; }
@@ -34,6 +42,28 @@ public class TTGameManager : TTSingleton<TTGameManager>
             yield return null;
         }
         completeCallback?.Invoke();
+    }
+
+    public void OnRunStarted()
+    {
+        OnRunStartedEvent?.Invoke();
+    }
+
+    public void OnRunFinished()
+    {
+        OnRunFinishedEvent?.Invoke();
+    }
+
+    public void AddDollars(int amount)
+    {
+        currentDollars += amount;
+        OnDollarsChange?.Invoke();
+    }
+
+    public void DeductDollars(int amount)
+    {
+        currentDollars -= amount;
+        OnDollarsChange?.Invoke();
     }
     
     #if UNITY_EDITOR

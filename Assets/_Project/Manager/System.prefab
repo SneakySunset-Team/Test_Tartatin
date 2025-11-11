@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2822754198478267277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7063011560628549540}
+  - component: {fileID: 6266750523715664504}
+  m_Layer: 0
+  m_Name: Canvas_None
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7063011560628549540
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822754198478267277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6419118401216379332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &6266750523715664504
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822754198478267277}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &3328898874412589368
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +94,7 @@ Transform:
   - {fileID: 3885673627657023000}
   - {fileID: 8265136510576886510}
   - {fileID: 5805112605065466893}
+  - {fileID: 7063011560628549540}
   m_Father: {fileID: 8954180812432632231}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3592661757210952567
@@ -54,14 +114,11 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 60085018394332936}
-    - {fileID: 8686172208944163962}
-    - {fileID: 6236149139741673262}
     - {fileID: 7644741489190927861}
-    - {fileID: 147459136971883715}
     - {fileID: 582097982620649916}
-    - {fileID: 7232440437332041418}
     - {fileID: 3620888191625976137}
     - {fileID: 6738564089924624215}
+    - {fileID: 6266750523715664504}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -86,7 +143,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -109,8 +166,8 @@ MonoBehaviour:
       Entry: 7
       Data: 3|TTUITransition_Move, Assembly-CSharp
     - Name: <canvasGroup>k__BackingField
-      Entry: 10
-      Data: 1
+      Entry: 6
+      Data: 
     - Name: <duration>k__BackingField
       Entry: 4
       Data: 1
@@ -268,8 +325,8 @@ MonoBehaviour:
       Entry: 7
       Data: 8|TTUITransition_Move, Assembly-CSharp
     - Name: <canvasGroup>k__BackingField
-      Entry: 10
-      Data: 2
+      Entry: 6
+      Data: 
     - Name: <duration>k__BackingField
       Entry: 4
       Data: 1
@@ -545,7 +602,7 @@ MonoBehaviour:
       Data: SMenuSettings, Assembly-CSharp
     - Name: menuCanvas
       Entry: 10
-      Data: 3
+      Data: 1
     - Name: transitions
       Entry: 7
       Data: 13|TTUITransition[], Assembly-CSharp
@@ -556,8 +613,8 @@ MonoBehaviour:
       Entry: 7
       Data: 14|TTUITransition_Fade, Assembly-CSharp
     - Name: <canvasGroup>k__BackingField
-      Entry: 10
-      Data: 4
+      Entry: 6
+      Data: 
     - Name: <duration>k__BackingField
       Entry: 4
       Data: 1
@@ -680,7 +737,7 @@ MonoBehaviour:
       Data: SMenuSettings, Assembly-CSharp
     - Name: menuCanvas
       Entry: 10
-      Data: 5
+      Data: 2
     - Name: transitions
       Entry: 7
       Data: 17|TTUITransition[], Assembly-CSharp
@@ -691,8 +748,8 @@ MonoBehaviour:
       Entry: 7
       Data: 18|TTUITransition_Move, Assembly-CSharp
     - Name: <canvasGroup>k__BackingField
-      Entry: 10
-      Data: 6
+      Entry: 6
+      Data: 
     - Name: <duration>k__BackingField
       Entry: 4
       Data: 1
@@ -860,7 +917,7 @@ MonoBehaviour:
       Data: SMenuSettings, Assembly-CSharp
     - Name: menuCanvas
       Entry: 10
-      Data: 7
+      Data: 3
     - Name: transitions
       Entry: 6
       Data: 
@@ -881,7 +938,28 @@ MonoBehaviour:
       Data: SMenuSettings, Assembly-CSharp
     - Name: menuCanvas
       Entry: 10
-      Data: 8
+      Data: 4
+    - Name: transitions
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: SMenuSettings, Assembly-CSharp
+    - Name: menuCanvas
+      Entry: 10
+      Data: 5
     - Name: transitions
       Entry: 6
       Data: 
@@ -897,8 +975,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  <currentState>k__BackingField: 0
-  <previousState>k__BackingField: 0
+  <currentState>k__BackingField: 5
+  <previousState>k__BackingField: 5
   _startState: 0
   <isGamePaused>k__BackingField: 0
   _allowGizmos: 0
@@ -965,6 +1043,8 @@ MonoBehaviour:
     SerializationNodes: []
   _levelSceneAsset: {fileID: 102900000, guid: c30d5e45239637043881e4ea1e9a88e8, type: 3}
   _levelSceneName: LevelScene
+  <currentDollarAmount>k__BackingField: 0
+  <_upgradeData>k__BackingField: {fileID: 0}
 --- !u!114 &5634052237907432344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,11 +1226,6 @@ Canvas:
 --- !u!224 &3885673627657023000 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3691371380327101815, guid: ae3163196d6d3dd4ba92066071ba2332, type: 3}
-  m_PrefabInstance: {fileID: 492806771059530607}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &7232440437332041418 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 7099932953755633061, guid: ae3163196d6d3dd4ba92066071ba2332, type: 3}
   m_PrefabInstance: {fileID: 492806771059530607}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1612433330345788557
@@ -1486,16 +1561,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3751532466751147134, guid: 84c0dad247a534148b539e4c557ea38e, type: 3}
   m_PrefabInstance: {fileID: 4361199075407445196}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &6236149139741673262 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 7641860805063162850, guid: 84c0dad247a534148b539e4c557ea38e, type: 3}
-  m_PrefabInstance: {fileID: 4361199075407445196}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &8686172208944163962 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4903695319936569526, guid: 84c0dad247a534148b539e4c557ea38e, type: 3}
-  m_PrefabInstance: {fileID: 4361199075407445196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5241541400610700933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1597,11 +1662,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd39f5a49f344f46b0b0c0fc5a89bbf, type: 3}
---- !u!225 &147459136971883715 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 5383582144213760582, guid: 3dd39f5a49f344f46b0b0c0fc5a89bbf, type: 3}
-  m_PrefabInstance: {fileID: 5241541400610700933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!223 &7644741489190927861 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 2497846066679710576, guid: 3dd39f5a49f344f46b0b0c0fc5a89bbf, type: 3}

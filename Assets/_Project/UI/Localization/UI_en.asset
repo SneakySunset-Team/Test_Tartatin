@@ -53,6 +53,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9057057902274543907
+  - m_Id: 898089105989632
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 898190004166656
+    m_Localized: Try Again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 899056102776832
+    m_Localized: You have earned {dollars} dollars
+    m_Metadata:
+      m_Items:
+      - rid: 9057057902274543907
+  - m_Id: 913488027557888
+    m_Localized: Dollars {dollars}
+    m_Metadata:
+      m_Items:
+      - rid: 9057057902274543907
   references:
     version: 2
     RefIds:
@@ -63,3 +81,5 @@ MonoBehaviour:
         m_SharedEntries:
         - id: 71344303874048
         - id: 72841573933056
+        - id: 899056102776832
+        - id: 913488027557888

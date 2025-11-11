@@ -17,7 +17,7 @@ public class TTPoolingSystem<J, T> where T : MonoBehaviour
         public int baseNumber;
     }
     
-    private Dictionary<J, List<T>> _PoolDictionary = new Dictionary<J, List<T>>();
+    private Dictionary<J, List<T>> _poolDictionary = new Dictionary<J, List<T>>();
     private Transform _inactivePoolFolder;
     private Transform _activePoolFolder;
     private Dictionary<J, T> _poolPrefabs;
@@ -33,18 +33,18 @@ public class TTPoolingSystem<J, T> where T : MonoBehaviour
         foreach (var element in poolPrefabs) _poolPrefabs.Add(element.Key, element.Value.prefab);
         foreach(var pair in poolPrefabs)
         {
-            _PoolDictionary.Add(pair.Key, new List<T>());
+            _poolDictionary.Add(pair.Key, new List<T>());
             for (int i = 0; i < pair.Value.baseNumber; i++)
             {
-                _PoolDictionary[pair.Key].Add(UnityEngine.Object.Instantiate(poolPrefabs[pair.Key].prefab, _inactivePoolFolder));
-                _PoolDictionary[pair.Key][i].gameObject.SetActive(false);
+                _poolDictionary[pair.Key].Add(UnityEngine.Object.Instantiate(poolPrefabs[pair.Key].prefab, _inactivePoolFolder));
+                _poolDictionary[pair.Key][i].gameObject.SetActive(false);
             }
         }
     }
 
     public T Get(J type, Vector3 position)
     {
-        foreach(var item in _PoolDictionary[type])
+        foreach(var item in _poolDictionary[type])
         {
             if (!item.gameObject.activeInHierarchy)
             {
@@ -54,8 +54,8 @@ public class TTPoolingSystem<J, T> where T : MonoBehaviour
                 return item;
             }
         }
-        _PoolDictionary[type].Add(UnityEngine.Object.Instantiate(_poolPrefabs[type],position, Quaternion.identity, _activePoolFolder));
-        return _PoolDictionary[type].Last();
+        _poolDictionary[type].Add(UnityEngine.Object.Instantiate(_poolPrefabs[type],position, Quaternion.identity, _activePoolFolder));
+        return _poolDictionary[type].Last();
     }
 
     public void Release(T item)
