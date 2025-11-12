@@ -127,6 +127,20 @@ MonoBehaviour:
   _currentHp: 0
   _spriteRenderer: {fileID: 7619364929585050463}
   _hpBarFill: {fileID: 3694164657934458217}
+  _fmodOnHit:
+    Guid:
+      Data1: -549619086
+      Data2: 1159554215
+      Data3: 255835070
+      Data4: 1844196729
+    Path: event:/Gameplay/BuildingDamage
+  _fmodOnDestroy:
+    Guid:
+      Data1: -98971453
+      Data2: 1291585854
+      Data3: 2107969454
+      Data4: 1384274827
+    Path: event:/Gameplay/BuildingDestroy
 --- !u!58 &8028850545947844651
 CircleCollider2D:
   m_ObjectHideFlags: 0

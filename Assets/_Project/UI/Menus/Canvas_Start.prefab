@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3539867477944889886}
   - component: {fileID: 7464378480690555117}
   - component: {fileID: 1307384832868327372}
+  - component: {fileID: 4757891835988196656}
   m_Layer: 0
   m_Name: Btn_ClosePanel
   m_TagString: Untagged
@@ -119,7 +120,50 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7464378480690555117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4757891835988196656}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4757891835988196656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115739887183945040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -250101980
+      Data2: 1171817286
+      Data3: -1468422266
+      Data4: -860150544
+    Path: event:/Building/IncorrectPlacement
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &259141234968161336
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +324,7 @@ GameObject:
   - component: {fileID: 7763803341814541285}
   - component: {fileID: 3668249125620365787}
   - component: {fileID: 2273347248476166864}
+  - component: {fileID: 8282248864426214944}
   m_Layer: 0
   m_Name: Btn_GetDollalrs
   m_TagString: Untagged
@@ -388,7 +433,50 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3668249125620365787}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8282248864426214944}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8282248864426214944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838681590571999212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1231719011
+      Data2: 1180711160
+      Data3: -1666714699
+      Data4: 2029046728
+    Path: event:/Building/PlaceBuilding
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1150442496593358782
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +989,7 @@ GameObject:
   - component: {fileID: 2420555859240356873}
   - component: {fileID: 3665661940212030037}
   - component: {fileID: 3788572431880701958}
+  - component: {fileID: 7386654519040333307}
   m_Layer: 0
   m_Name: Btn_ClosePanel
   m_TagString: Untagged
@@ -1008,7 +1097,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2420555859240356873}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4757891835988196656}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3788572431880701958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1138,37 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &7386654519040333307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2702821903273719714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -250101980
+      Data2: 1171817286
+      Data3: -1468422266
+      Data4: -860150544
+    Path: event:/Building/IncorrectPlacement
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2763025852346116566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +2028,7 @@ GameObject:
   - component: {fileID: 3370394890673780553}
   - component: {fileID: 8926014788630581463}
   - component: {fileID: 2202102774662365417}
+  - component: {fileID: 6370007572747110436}
   m_Layer: 0
   m_Name: Btn_ResetUpgrades
   m_TagString: Untagged
@@ -2004,7 +2137,50 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8926014788630581463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6370007572747110436}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6370007572747110436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5312642060092111721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1231719011
+      Data2: 1180711160
+      Data3: -1666714699
+      Data4: 2029046728
+    Path: event:/Building/PlaceBuilding
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5496852224984225059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,6 +2732,7 @@ GameObject:
   - component: {fileID: 9084860718028178977}
   - component: {fileID: 5459663912146400691}
   - component: {fileID: 3257882620927070258}
+  - component: {fileID: 7684312312174820300}
   m_Layer: 0
   m_Name: Btn_ResetDollars
   m_TagString: Untagged
@@ -2664,7 +2841,50 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5459663912146400691}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8282248864426214944}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7684312312174820300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304206808868368156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1231719011
+      Data2: 1180711160
+      Data3: -1666714699
+      Data4: 2029046728
+    Path: event:/Building/PlaceBuilding
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7919184422291181061
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class STTRunManager : TTSingleton<STTRunManager>
     [field : SerializeField, HideInInspector] public TTPoolingSystem<EPoolItem, MonoBehaviour> pool { get; private set; }
     [field : SerializeField] public TTWaveManager waveManager { get; private set; }
     [field : SerializeField] public TTRunEconomyManager runEconomyManager { get; private set; }
-    [field : SerializeField, HideInInspector] public TTBuildingManager buildingManager { get; private set; }
+    [field : SerializeField] public TTBuildingManager buildingManager { get; private set; }
 
     public void GameOver()
     {

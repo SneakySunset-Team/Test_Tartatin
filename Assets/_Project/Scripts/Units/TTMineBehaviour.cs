@@ -16,6 +16,9 @@ public class TTMineBehaviour : MonoBehaviour
     [SerializeField]
     Texture2D[] _miningParticleTextures;
 
+    [SerializeField]
+    FMODUnity.EventReference _fmodMining;
+    
     private Renderer _miningParticleRenderer;
     TTGridElement _gridElement;
     bool _isHidden;
@@ -50,6 +53,7 @@ public class TTMineBehaviour : MonoBehaviour
             yield return _miningWait;
             STTRunManager.Instance.runEconomyManager.AddGold(_upgradeData.GetStatValue(EUpgradeType.MineGoldPerTickAmount));
             SpawnParticle();
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodMining, transform.position);
         }
     }
 

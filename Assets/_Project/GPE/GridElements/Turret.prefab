@@ -267,6 +267,13 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 13042450146139043, guid: 8cf276251a7951d47b61453bf3c3e437, type: 3}
   _firePoint: {fileID: 3260843794752404972}
   _detectionCollider: {fileID: 1822091506057778860}
+  _fireEvent:
+    Guid:
+      Data1: -270368209
+      Data2: 1074153788
+      Data3: 634823058
+      Data4: 734297065
+    Path: event:/Gameplay/TurretFire
 --- !u!50 &2730110047369017757
 Rigidbody2D:
   serializedVersion: 5

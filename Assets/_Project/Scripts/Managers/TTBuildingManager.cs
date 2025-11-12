@@ -13,11 +13,13 @@ public class TTBuildingManager
     [HideInInspector]
     public Action OnDraggedItemRelease;
     
+    [SerializeField]
+    FMODUnity.EventReference _fmodPlace, _fmodWrongPlacement;
     private TTGridElement _draggedItem;
     private Camera _mainCamera;
     private TTCell _hoveredCell;
     bool _isDraggedItemAnchored = false;
-
+    
     public void OnStart()
     {
         _mainCamera = Camera.main;
@@ -92,9 +94,11 @@ public class TTBuildingManager
                     {
                         _draggedItem.ClearCells();
                         _hoveredCell.AnchorElement(_draggedItem);
+                        FMODUnity.RuntimeManager.PlayOneShot(_fmodPlace);
                     }
                     else
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot(_fmodPlace);
                         _hoveredCell.AnchorElement(_draggedItem);
                         STTRunManager.Instance.runEconomyManager.DeductGold(STTRunManager.Instance.runEconomyManager.currentPrice);
                         STTRunManager.Instance.runEconomyManager.IncreasePrice();
@@ -105,10 +109,12 @@ public class TTBuildingManager
                     if(_isDraggedItemAnchored)
                     {
                         _draggedItem.Show();
+                        FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
                     }
                     else
                     {
                         _draggedItem.ClearCells();
+                        FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
                         STTRunManager.Instance.pool.Release(_draggedItem);
                     }
                 }
@@ -117,10 +123,12 @@ public class TTBuildingManager
             else if(_isDraggedItemAnchored)
             {
                 _draggedItem.Show();
+                FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
             }
             else
             {
                 _draggedItem.ClearCells();
+                FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
                 STTRunManager.Instance.pool.Release(_draggedItem);
             }
             OnDraggedItemRelease?.Invoke();

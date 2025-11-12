@@ -308,6 +308,20 @@ MonoBehaviour:
   _startHpNumber: 7
   <hpNumber>k__BackingField: 7
   _hpBarFill: {fileID: 8169834718971137417}
+  _fmodDamage:
+    Guid:
+      Data1: 489766518
+      Data2: 1197389221
+      Data3: 545966502
+      Data4: 915764126
+    Path: event:/Gameplay/EnnemyDamage
+  _fmodDestroy:
+    Guid:
+      Data1: -257394692
+      Data2: 1144262558
+      Data3: 255590316
+      Data4: 2086176119
+    Path: event:/Gameplay/EnnemyDestroy
 --- !u!50 &7103594179293489770
 Rigidbody2D:
   serializedVersion: 5

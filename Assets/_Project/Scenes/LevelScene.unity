@@ -2927,6 +2927,46 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodPlace.Path
+      value: event:/Building/PlaceBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodPlace.Guid.Data1
+      value: -1231719011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodPlace.Guid.Data2
+      value: 1180711160
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodPlace.Guid.Data3
+      value: -1666714699
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodPlace.Guid.Data4
+      value: 2029046728
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodWrongPlacement.Path
+      value: event:/Building/IncorrectPlacement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodWrongPlacement.Guid.Data1
+      value: -250101980
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodWrongPlacement.Guid.Data2
+      value: 1171817286
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodWrongPlacement.Guid.Data3
+      value: -1468422266
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990061349069590952, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
+      propertyPath: <buildingManager>k__BackingField._fmodWrongPlacement.Guid.Data4
+      value: -860150544
+      objectReference: {fileID: 0}
     - target: {fileID: 6179432328422327541, guid: 11f38f31dc8b18e49a5af61fe536d1dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

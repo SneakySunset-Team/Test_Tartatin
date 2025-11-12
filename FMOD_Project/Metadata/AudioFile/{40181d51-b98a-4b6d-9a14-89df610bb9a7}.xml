@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{40181d51-b98a-4b6d-9a14-89df610bb9a7}">
+		<property name="assetPath">
+			<value>animated-cartoon-explosion-impact-352744.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3759999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2dbe2c84-71a8-4710-a309-155a8df62d6f}</destination>
+		</relationship>
+	</object>
+</objects>

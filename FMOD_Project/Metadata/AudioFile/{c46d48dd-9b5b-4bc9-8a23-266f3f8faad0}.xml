@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c46d48dd-9b5b-4bc9-8a23-266f3f8faad0}">
+		<property name="assetPath">
+			<value>retro-laser-1-236669.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.18285714285714286</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2dbe2c84-71a8-4710-a309-155a8df62d6f}</destination>
+		</relationship>
+	</object>
+</objects>

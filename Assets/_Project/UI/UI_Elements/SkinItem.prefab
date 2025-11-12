@@ -565,6 +565,7 @@ GameObject:
   - component: {fileID: 3761589004170007875}
   - component: {fileID: 8436153510402544048}
   - component: {fileID: 7890812961109232216}
+  - component: {fileID: 2742138486087889873}
   m_Layer: 0
   m_Name: SkinItem
   m_TagString: Untagged
@@ -650,7 +651,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2742138486087889873}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!114 &7890812961109232216
 MonoBehaviour:
@@ -666,3 +679,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _iconImg: {fileID: 9150978069750398287}
   _nameLocalizeString: {fileID: 1879706014245920830}
+--- !u!114 &2742138486087889873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8902276697273730112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1782590769
+      Data2: 1321589399
+      Data3: -388935544
+      Data4: 2061917211
+    Path: event:/UI/Toggle
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

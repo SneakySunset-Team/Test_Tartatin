@@ -25,6 +25,11 @@ public class TTGridElement : MonoBehaviour
 
     [SerializeField, HideInPlayMode]
     Image _hpBarFill;
+
+    [SerializeField]
+    FMODUnity.EventReference _fmodOnHit, _fmodOnDestroy;
+    
+    
     
     void OnEnable()
     {
@@ -37,11 +42,13 @@ public class TTGridElement : MonoBehaviour
         _hpBarFill.fillAmount = 1;
         if (_currentHp <= 0)
         {
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodOnDestroy);
             ClearCells();
             STTRunManager.Instance.pool.Release(this);
         }
         else
         {
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodOnHit);
             _hpBarFill.fillAmount = (float)_currentHp / _baseHp;
         }
     }

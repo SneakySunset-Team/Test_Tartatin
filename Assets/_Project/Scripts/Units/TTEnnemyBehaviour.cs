@@ -15,7 +15,10 @@ public class TTEnnemyBehaviour : MonoBehaviour
     [field : SerializeField, HideInPlayMode] private int _startHpNumber = 7;
     [field : SerializeField, HideInEditorMode] public int hpNumber { get; private set; }
     [SerializeField, HideInPlayMode] private Image _hpBarFill;
-    
+    [FormerlySerializedAs("_fmodDamageEvent")]
+    [SerializeField] 
+    FMODUnity.EventReference _fmodDamage, _fmodDestroy;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -47,6 +50,11 @@ public class TTEnnemyBehaviour : MonoBehaviour
         {
             STTRunManager.Instance.runEconomyManager.AddDollars(1);
             STTRunManager.Instance.pool.Release(this);
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodDestroy);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodDamage);
         }
     }
     

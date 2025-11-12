@@ -5050,3 +5050,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: aefd04f05bee7e44cb1da61407b45717, type: 3}
   - {fileID: 2800000, guid: 9c7ed329eaa4caf4ab32fb519e189cd5, type: 3}
   - {fileID: 2800000, guid: da6d934ad2032394790ccc77382a286d, type: 3}
+  _fmodMining:
+    Guid:
+      Data1: 1307834633
+      Data2: 1325682064
+      Data3: 553632674
+      Data4: -1505130043
+    Path: event:/Gameplay/Gold Generated

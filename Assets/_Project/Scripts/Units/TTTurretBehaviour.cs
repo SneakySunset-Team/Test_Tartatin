@@ -23,6 +23,9 @@ public class TTTurretBehaviour : MonoBehaviour
 
     [SerializeField]
     CircleCollider2D _detectionCollider;
+
+    [SerializeField]
+    FMODUnity.EventReference _fireEvent;
     
     WaitUntil _waitUntilEnnemiesInRange;
     List<TTEnnemyBehaviour> _ennemiesInRange = new List<TTEnnemyBehaviour>();
@@ -74,6 +77,7 @@ public class TTTurretBehaviour : MonoBehaviour
         {
             Debug.LogWarning("Pooled an already active bullet");
         }
+        FMODUnity.RuntimeManager.PlayOneShot(_fireEvent);
         bullet.Initialize(_ennemiesInRange[0], _upgradeData.GetStatValue(EUpgradeType.TurretDamage));
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{aa6f5412-8afa-42cc-aa98-bd2832684152}">
+		<property name="assetPath">
+			<value>metal-hit-94-200422.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.248</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2dbe2c84-71a8-4710-a309-155a8df62d6f}</destination>
+		</relationship>
+	</object>
+</objects>
