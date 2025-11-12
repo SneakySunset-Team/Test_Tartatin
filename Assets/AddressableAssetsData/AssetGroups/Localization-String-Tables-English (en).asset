@@ -29,6 +29,12 @@ MonoBehaviour:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 838ae84805d52584bb9c64c20a1c91dc
+    m_Address: Cheats_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c4e255a36b8e7394f879aa218ab008af
     m_Address: UI_en
     m_ReadOnly: 1

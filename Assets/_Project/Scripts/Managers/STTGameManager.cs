@@ -45,7 +45,7 @@ public class STTGameManager : TTSingleton<STTGameManager>
     {
         base.Awake();
         currentDollars = PlayerPrefs.GetInt(PlayerPrefDollar, 0);
-
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         // Set Skin on start
         {
             var skinManager = FindFirstObjectByType<TTSkinPageManager>(FindObjectsInactive.Include);

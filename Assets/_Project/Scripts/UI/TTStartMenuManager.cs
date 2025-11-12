@@ -32,6 +32,10 @@ public class TTStartMenuManager : MonoBehaviour
     {
         _playBtn.onClick.AddListener(()=> STTMenuManager.Instance.ChangeState(EMenuState.Loading));
         _frToggle.onValueChanged.AddListener((bool value) => ChangeLocal(value));
+        bool isFr = PlayerPrefs.GetString("current-local") == "fr";
+        _frToggle.isOn = isFr;
+        
+        
         _cheatGetDollarsBtn.onClick.AddListener(()=> STTGameManager.Instance.AddDollars(100));
         _cheatResetDollarsBtn.onClick.AddListener(()=> STTGameManager.Instance.DeductDollars(STTGameManager.Instance.currentDollars));
         _dollars = _dollarsTxt.StringReference["dollars"] as  IntVariable;
@@ -58,6 +62,8 @@ public class TTStartMenuManager : MonoBehaviour
         string name = toFrench ? "fr" : "en";
         var local = LocalizationSettings.AvailableLocales.GetLocale(new System.Globalization.CultureInfo(name));
         LocalizationSettings.SelectedLocale = local;
+        PlayerPrefs.SetString("current-local", name);
+        PlayerPrefs.Save();
     }
 
     private void OnDollarChange()

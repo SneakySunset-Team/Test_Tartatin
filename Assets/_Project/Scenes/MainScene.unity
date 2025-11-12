@@ -203,6 +203,11 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 4236590241983246132, guid: ae3163196d6d3dd4ba92066071ba2332, type: 3}
   m_PrefabInstance: {fileID: 2370219042082123749}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &617357876 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 9205594199216851246, guid: fa0f884ed3573874ab38553c17b8e166, type: 3}
+  m_PrefabInstance: {fileID: 3482121571391254535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629616050
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +597,7 @@ MonoBehaviour:
     - {fileID: 1644365080}
     - {fileID: 546371923}
     - {fileID: 8121282874413609775}
+    - {fileID: 617357876}
     - {fileID: 5106866778908735232}
     - {fileID: 1646415034}
     - {fileID: 8126042847700995826}
@@ -652,7 +658,7 @@ MonoBehaviour:
       Data: 1
     - Name: <duration>k__BackingField
       Entry: 4
-      Data: 2
+      Data: 1.3
     - Name: <delayBeforeTransition>k__BackingField
       Entry: 4
       Data: 0.2
@@ -880,7 +886,7 @@ MonoBehaviour:
       Data: 1
     - Name: <delayBeforeTransition>k__BackingField
       Entry: 4
-      Data: 0.2
+      Data: 1
     - Name: <xAnimationCurve>k__BackingField
       Entry: 7
       Data: 9|UnityEngine.AnimationCurve, UnityEngine.CoreModule
@@ -1099,10 +1105,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: -200
+      Data: -400
     - Name: 
       Entry: 4
-      Data: -200
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -1243,7 +1249,7 @@ MonoBehaviour:
       Data: 1
     - Name: <delayBeforeTransition>k__BackingField
       Entry: 4
-      Data: 0.2
+      Data: 1
     - Name: <xAnimationCurve>k__BackingField
       Entry: 7
       Data: 17|UnityEngine.AnimationCurve, UnityEngine.CoreModule
@@ -1462,10 +1468,10 @@ MonoBehaviour:
       Data: UnityEngine.Vector2, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 200
+      Data: 400
     - Name: 
       Entry: 4
-      Data: -200
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -1663,7 +1669,7 @@ MonoBehaviour:
       Data: 8
     - Name: <duration>k__BackingField
       Entry: 4
-      Data: 1
+      Data: 0.5
     - Name: <delayBeforeTransition>k__BackingField
       Entry: 4
       Data: 0
@@ -1888,7 +1894,7 @@ MonoBehaviour:
       Data: 9
     - Name: <duration>k__BackingField
       Entry: 4
-      Data: 1
+      Data: 0.5
     - Name: <delayBeforeTransition>k__BackingField
       Entry: 4
       Data: 0
@@ -2130,7 +2136,121 @@ MonoBehaviour:
       Entry: 10
       Data: 10
     - Name: transitions
-      Entry: 6
+      Entry: 7
+      Data: 36|TTUITransition[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 37|TTUITransition_Fade, Assembly-CSharp
+    - Name: <canvasGroup>k__BackingField
+      Entry: 10
+      Data: 11
+    - Name: <duration>k__BackingField
+      Entry: 4
+      Data: 0.5
+    - Name: <delayBeforeTransition>k__BackingField
+      Entry: 4
+      Data: 0
+    - Name: <animationCurve>k__BackingField
+      Entry: 7
+      Data: 38|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    - Name: 
+      Entry: 7
+      Data: 39|UnityEngine.Keyframe[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 0
+    - Name: m_Value
+      Entry: 4
+      Data: 0
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Keyframe, UnityEngine.CoreModule
+    - Name: ver
+      Entry: 3
+      Data: 1
+    - Name: m_Time
+      Entry: 4
+      Data: 1
+    - Name: m_Value
+      Entry: 4
+      Data: 1
+    - Name: m_InTangent
+      Entry: 4
+      Data: 0
+    - Name: m_OutTangent
+      Entry: 4
+      Data: 0
+    - Name: m_TangentMode
+      Entry: 3
+      Data: 0
+    - Name: m_WeightedMode
+      Entry: 3
+      Data: 0
+    - Name: m_InWeight
+      Entry: 4
+      Data: 0
+    - Name: m_OutWeight
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8
@@ -2149,19 +2269,19 @@ MonoBehaviour:
       Data: SMenuSettings, Assembly-CSharp
     - Name: menuCanvas
       Entry: 10
-      Data: 11
+      Data: 12
     - Name: transitions
       Entry: 7
-      Data: 36|TTUITransition[], Assembly-CSharp
+      Data: 40|TTUITransition[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 37|TTUITransition_Move, Assembly-CSharp
+      Data: 41|TTUITransition_Move, Assembly-CSharp
     - Name: <canvasGroup>k__BackingField
       Entry: 10
-      Data: 12
+      Data: 13
     - Name: <duration>k__BackingField
       Entry: 4
       Data: 2
@@ -2173,10 +2293,10 @@ MonoBehaviour:
       Data: 
     - Name: <yAnimationCurve>k__BackingField
       Entry: 7
-      Data: 38|UnityEngine.AnimationCurve, UnityEngine.CoreModule
+      Data: 42|UnityEngine.AnimationCurve, UnityEngine.CoreModule
     - Name: 
       Entry: 7
-      Data: 39|UnityEngine.Keyframe[], UnityEngine.CoreModule
+      Data: 43|UnityEngine.Keyframe[], UnityEngine.CoreModule
     - Name: 
       Entry: 12
       Data: 2
@@ -2317,7 +2437,7 @@ MonoBehaviour:
       Data: SMenuSettings, Assembly-CSharp
     - Name: menuCanvas
       Entry: 10
-      Data: 13
+      Data: 14
     - Name: transitions
       Entry: 6
       Data: 
