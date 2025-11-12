@@ -4,8 +4,9 @@ using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public partial class TTGridManager : TTSingleton<TTGridManager>
+public class TTGridManager : TTSingleton<TTGridManager>
 {
     [field : SerializeField, ReadOnly, BoxGroup("Grid")]
     public TTCell[] grid { get; private set; }
@@ -23,11 +24,11 @@ public partial class TTGridManager : TTSingleton<TTGridManager>
     TTCell _cellPrefab;
 
     [SerializeField, FoldoutGroup("Placement")]
-    float _size, spacing;
+    float _size, _spacing;
 
     public TTCell GetCellFromWorldPosition(Vector2 worldPosition)
     {
-        float cellSize = _size + spacing;
+        float cellSize = _size + _spacing;
     
         Vector2 localPosition = worldPosition - (Vector2)_gridRoot.position;
     
@@ -37,7 +38,7 @@ public partial class TTGridManager : TTSingleton<TTGridManager>
             (localPosition.y + (float)(rows - 1) / 2f * cellSize) / cellSize);
     
         if (row < 0 || row >= rows || column < 0 || column >= columns) return null;
-        else return grid[row * columns + column];
+        return grid[row * columns + column];
     }
     
     #if UNITY_EDITOR
@@ -78,10 +79,9 @@ public partial class TTGridManager : TTSingleton<TTGridManager>
         }
         cell.coordinates = new Vector2Int(row, column);
         cell.transform.localPosition = new Vector3(
-            column * (_size + spacing) - (float)(columns - 1) / (float)2 * (_size + spacing), 
-            row * (_size + spacing) - (float)(rows - 1) / (float)2 * (_size + spacing),
+            column * (_size + _spacing) - (float)(columns - 1) / (float)2 * (_size + _spacing), 
+            row * (_size + _spacing) - (float)(rows - 1) / (float)2 * (_size + _spacing),
             0);
-        //cell.transform.position += _gridRoot.position;
         
         cell.transform.localScale = Vector3.one * _size;
         cell.name = $"Cell {row}, {column}";

@@ -9,15 +9,13 @@ public class TTEnnemyBehaviour : MonoBehaviour
 {
     public Action<TTEnnemyBehaviour> OnDisableEvent;
     
-    Rigidbody2D _rb;
     [SerializeField] float _moveSpeed;
     [field : SerializeField] public int damage { get; private set; } = 3;
     [field : SerializeField, HideInPlayMode] private int _startHpNumber = 7;
     [field : SerializeField, HideInEditorMode] public int hpNumber { get; private set; }
     [SerializeField, HideInPlayMode] private Image _hpBarFill;
-    [FormerlySerializedAs("_fmodDamageEvent")]
-    [SerializeField] 
-    FMODUnity.EventReference _fmodDamage, _fmodDestroy;
+    [SerializeField] FMODUnity.EventReference _fmodDamage, _fmodDestroy;
+    Rigidbody2D _rb;
 
     void Start()
     {
@@ -45,7 +43,7 @@ public class TTEnnemyBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hpNumber -= damage;
-        _hpBarFill.fillAmount = (float)hpNumber / (float)_startHpNumber;
+        _hpBarFill.fillAmount = (float)hpNumber / _startHpNumber;
         if (hpNumber <= 0)
         {
             STTRunManager.Instance.runEconomyManager.AddDollars(1);
@@ -60,7 +58,7 @@ public class TTEnnemyBehaviour : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.TryGetComponent<TTGridElement>(out TTGridElement element))
+        if (other.gameObject.TryGetComponent(out TTGridElement element))
         {
             element.TakeDamage(damage);
             STTRunManager.Instance.pool.Release(this);

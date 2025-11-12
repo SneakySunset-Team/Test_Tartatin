@@ -15,7 +15,7 @@ public enum EUpgradeType {StartGold, TurretDamage, TurretFireRate, MineGoldPerTi
 public class TTUpgradeData : SerializedScriptableObject
 {
     [field : SerializeField]
-    public Dictionary<EUpgradeType, SStatUpgradeData> upgradeData { get; private set; }
+    public Dictionary<EUpgradeType, TTStatUpgradeData> upgradeData { get; private set; }
 
     public void LevelUpStat(EUpgradeType upgradeType)
     {
@@ -52,10 +52,10 @@ public class TTUpgradeData : SerializedScriptableObject
     {
         if (upgradeData == null)
         {
-            upgradeData = new Dictionary<EUpgradeType, SStatUpgradeData>();
+            upgradeData = new Dictionary<EUpgradeType, TTStatUpgradeData>();
             foreach (EUpgradeType upgradeType in Enum.GetValues(typeof(EUpgradeType)))
             {
-                upgradeData.Add(upgradeType, new SStatUpgradeData());
+                upgradeData.Add(upgradeType, new TTStatUpgradeData());
             }
         }
     }
@@ -72,7 +72,7 @@ public struct SStatLevelData
 }
     
 [System.Serializable]
-public class SStatUpgradeData
+public class TTStatUpgradeData
 {
     public SStatLevelData[] levelData;
     public int currentLevel;

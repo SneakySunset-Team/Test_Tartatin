@@ -15,6 +15,7 @@ public class TTBuildingManager
     
     [SerializeField]
     FMODUnity.EventReference _fmodPlace, _fmodWrongPlacement;
+    
     private TTGridElement _draggedItem;
     private Camera _mainCamera;
     private TTCell _hoveredCell;
@@ -83,56 +84,55 @@ public class TTBuildingManager
     
     private void OnFingerUp(LeanFinger finger)
     {
-        if (_draggedItem != null)
+        if (_draggedItem == null) return;
+        
+        if (_hoveredCell)
         {
-            if (_hoveredCell)
+            _hoveredCell.Unhighlight();
+            if (_hoveredCell.gridElement == null)
             {
-                _hoveredCell.Unhighlight();
-                if (_hoveredCell.gridElement == null)
+                if (_isDraggedItemAnchored)
                 {
-                    if (_isDraggedItemAnchored)
-                    {
-                        _draggedItem.ClearCells();
-                        _hoveredCell.AnchorElement(_draggedItem);
-                        FMODUnity.RuntimeManager.PlayOneShot(_fmodPlace);
-                    }
-                    else
-                    {
-                        FMODUnity.RuntimeManager.PlayOneShot(_fmodPlace);
-                        _hoveredCell.AnchorElement(_draggedItem);
-                        STTRunManager.Instance.runEconomyManager.DeductGold(STTRunManager.Instance.runEconomyManager.currentPrice);
-                        STTRunManager.Instance.runEconomyManager.IncreasePrice();
-                    }
+                    _draggedItem.ClearCells();
+                    _hoveredCell.AnchorElement(_draggedItem);
+                    FMODUnity.RuntimeManager.PlayOneShot(_fmodPlace);
                 }
                 else
                 {
-                    if(_isDraggedItemAnchored)
-                    {
-                        _draggedItem.Show();
-                        FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
-                    }
-                    else
-                    {
-                        _draggedItem.ClearCells();
-                        FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
-                        STTRunManager.Instance.pool.Release(_draggedItem);
-                    }
+                    FMODUnity.RuntimeManager.PlayOneShot(_fmodPlace);
+                    _hoveredCell.AnchorElement(_draggedItem);
+                    STTRunManager.Instance.runEconomyManager.DeductGold(STTRunManager.Instance.runEconomyManager.currentPrice);
+                    STTRunManager.Instance.runEconomyManager.IncreasePrice();
                 }
-                _hoveredCell = null;
-            }
-            else if(_isDraggedItemAnchored)
-            {
-                _draggedItem.Show();
-                FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
             }
             else
             {
-                _draggedItem.ClearCells();
-                FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
-                STTRunManager.Instance.pool.Release(_draggedItem);
+                if(_isDraggedItemAnchored)
+                {
+                    _draggedItem.Show();
+                    FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
+                }
+                else
+                {
+                    _draggedItem.ClearCells();
+                    FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
+                    STTRunManager.Instance.pool.Release(_draggedItem);
+                }
             }
-            OnDraggedItemRelease?.Invoke();
-            _draggedItem = null;
+            _hoveredCell = null;
         }
+        else if(_isDraggedItemAnchored)
+        {
+            _draggedItem.Show();
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
+        }
+        else
+        {
+            _draggedItem.ClearCells();
+            FMODUnity.RuntimeManager.PlayOneShot(_fmodWrongPlacement);
+            STTRunManager.Instance.pool.Release(_draggedItem);
+        }
+        OnDraggedItemRelease?.Invoke();
+        _draggedItem = null;
     }
 }

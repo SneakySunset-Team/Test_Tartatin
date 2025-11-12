@@ -34,12 +34,12 @@ public class TTGridElement : MonoBehaviour
     void OnEnable()
     {
         _currentHp = _baseHp;
+        _hpBarFill.fillAmount = 1;
     }
 
     public void TakeDamage(int damage)
     {
         _currentHp -= damage;
-        _hpBarFill.fillAmount = 1;
         if (_currentHp <= 0)
         {
             FMODUnity.RuntimeManager.PlayOneShot(_fmodOnDestroy);

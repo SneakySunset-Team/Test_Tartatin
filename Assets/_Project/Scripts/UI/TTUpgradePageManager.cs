@@ -37,14 +37,14 @@ public class TTUpgradePageManager : MonoBehaviour
     
     void OnEnable()
     {
-        STTGameManager.Instance.OnDollarsChange += OnDollarChange;
+        STTGameManager.Instance.OnDollarsChangeEvent += OnDollarChange;
         // Subscription happens after the callback on state change
         OnDollarChange();
     }
 
     void OnDisable()
     {
-        STTGameManager.Instance.OnDollarsChange -= OnDollarChange;
+        STTGameManager.Instance.OnDollarsChangeEvent -= OnDollarChange;
     }
     
     private void OnDollarChange()

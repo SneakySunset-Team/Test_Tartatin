@@ -18,7 +18,6 @@ public class STTRunManager : TTSingleton<STTRunManager>
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
         STTGameManager.Instance.AddDollars(runEconomyManager.runDollarsGain);
         STTGameManager.Instance.OnRunFinished();
         STTMenuManager.Instance.ChangeState(EMenuState.GameOver);
@@ -31,7 +30,7 @@ public class STTRunManager : TTSingleton<STTRunManager>
             (_poolingData.poolingElements, _inactivePoolFolder, _activePoolFolder);
     }
 
-    // yield a frame to wait for Play Menu to be Enabled
+    // yield a second to wait for Play Menu to be Enabled
     IEnumerator Start()
     {
         yield return new WaitForSeconds(1f);

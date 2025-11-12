@@ -6,15 +6,14 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(Rigidbody2D))]
 public class TTBulletBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    float _speed;
-    [field : ReadOnly]
     public TTEnnemyBehaviour ennemy { get; private set; }
-    int _damage;
+    
+    [field : ReadOnly] int _damage;
+    [SerializeField] float _speed;
+    [SerializeField] float _lifeTime;
+    
     Rigidbody2D _rb;
 
-    [SerializeField]
-    float _lifeTime;
     
     void Awake()
     {

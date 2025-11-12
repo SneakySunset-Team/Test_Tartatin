@@ -19,7 +19,7 @@ public class STTGameManager : TTSingleton<STTGameManager>
     public Action OnRunFinishedEvent;
     
     [HideInInspector]
-    public Action OnDollarsChange;
+    public Action OnDollarsChangeEvent;
     
     #if UNITY_EDITOR
     [SerializeField, BoxGroup("Level"), HideInPlayMode]
@@ -57,11 +57,13 @@ public class STTGameManager : TTSingleton<STTGameManager>
         }
     }
 
-    public void LoadLevelSceneAsync(Action<float> progressUpdateCallback, Action completeCallback) => StartCoroutine(LoadLevelSceneCoroutine(progressUpdateCallback, completeCallback));
+    public void LoadLevelSceneAsync(Action<float> progressUpdateCallback, Action completeCallback) 
+        => StartCoroutine(LoadLevelSceneCoroutine(progressUpdateCallback, completeCallback));
 
     private IEnumerator LoadLevelSceneCoroutine(Action<float> progressUpdateCallback, Action completeCallback)
     {
         AsyncOperation asyncOp = SceneManager.LoadSceneAsync(_levelSceneName, LoadSceneMode.Single);
+        // minProgress in order to have the progress bar load for at least some time
         float minProgress = _minLoadingTime;
         while (asyncOp.isDone == false || minProgress > 0)
         {
@@ -86,7 +88,7 @@ public class STTGameManager : TTSingleton<STTGameManager>
     public void AddDollars(int amount)
     {
         currentDollars += amount;
-        OnDollarsChange?.Invoke();
+        OnDollarsChangeEvent?.Invoke();
         PlayerPrefs.SetInt(PlayerPrefDollar, currentDollars);
         PlayerPrefs.Save();
     }
@@ -94,7 +96,7 @@ public class STTGameManager : TTSingleton<STTGameManager>
     public void DeductDollars(int amount)
     {
         currentDollars -= amount;
-        OnDollarsChange?.Invoke();
+        OnDollarsChangeEvent?.Invoke();
         PlayerPrefs.SetInt(PlayerPrefDollar, currentDollars);
         PlayerPrefs.Save();
     }
